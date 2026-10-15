@@ -41,7 +41,14 @@ export default async function ProductsCatalogPage(props: {
             status: 'ACTIVE',
             ...(shopSlug ? { slug: shopSlug } : {}),
           },
-          ...(categorySlug ? { mallCategory: { slug: categorySlug } } : {}),
+          ...(categorySlug
+            ? {
+                OR: [
+                  { mallCategory: { slug: categorySlug } },
+                  { shopCategory: { slug: categorySlug } },
+                ],
+              }
+            : {}),
           ...(q
             ? {
                 OR: [

@@ -30,7 +30,12 @@ interface StorefrontHeaderProps {
   };
   activeCategory?: string;
   onSelectCategory?: (slug: string) => void;
-  categories?: Array<{ id: string; name: string; slug: string }>;
+  categories?: Array<{
+    id: string;
+    name: string;
+    slug: string;
+    _count?: { products: number };
+  }>;
 }
 
 export function StorefrontHeader({
@@ -203,8 +208,15 @@ export function StorefrontHeader({
           {/* In-Shop Category Tabs */}
           {categories.length > 0 && (
             <div className="mt-6 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
-              <button
-                onClick={() => onSelectCategory?.('all')}
+              <Link
+                href={`/shops/${shop.slug}`}
+                scroll={false}
+                onClick={(e) => {
+                  if (onSelectCategory) {
+                    e.preventDefault();
+                    onSelectCategory('all');
+                  }
+                }}
                 className={`px-4 py-2 rounded-xl text-xs font-bold shrink-0 transition ${
                   activeCategory === 'all' || !activeCategory
                     ? 'bg-slate-900 text-white shadow-sm'
@@ -212,19 +224,29 @@ export function StorefrontHeader({
                 }`}
               >
                 All Products
-              </button>
+              </Link>
               {categories.map((c) => (
-                <button
+                <Link
                   key={c.id}
-                  onClick={() => onSelectCategory?.(c.slug)}
+                  href={`/shops/${shop.slug}?category=${c.slug}`}
+                  scroll={false}
+                  onClick={(e) => {
+                    if (onSelectCategory) {
+                      e.preventDefault();
+                      onSelectCategory(c.slug);
+                    }
+                  }}
                   className={`px-4 py-2 rounded-xl text-xs font-bold shrink-0 transition ${
                     activeCategory === c.slug
                       ? 'bg-slate-900 text-white shadow-sm'
                       : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                   }`}
                 >
-                  {c.name}
-                </button>
+                  <span>{c.name}</span>
+                  {typeof c._count?.products === 'number' && c._count.products > 0 && (
+                    <span className="ml-1.5 opacity-70">({c._count.products})</span>
+                  )}
+                </Link>
               ))}
             </div>
           )}

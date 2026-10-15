@@ -34,7 +34,14 @@ export async function GET(req: NextRequest) {
         status: ShopStatus.ACTIVE,
         ...(shopSlug ? { slug: shopSlug } : {}),
       },
-      ...(categorySlug ? { mallCategory: { slug: categorySlug } } : {}),
+      ...(categorySlug
+        ? {
+            OR: [
+              { mallCategory: { slug: categorySlug } },
+              { shopCategory: { slug: categorySlug } },
+            ],
+          }
+        : {}),
       ...(Object.keys(priceFilter).length > 0 ? { price: priceFilter } : {}),
       ...(search
         ? {

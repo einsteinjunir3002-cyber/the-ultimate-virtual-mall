@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { prisma } from '@/lib/prisma';
 import { StorefrontHeader } from '@/components/StorefrontHeader';
@@ -48,6 +49,15 @@ export default async function ShopStorefrontPage(props: {
       include: {
         shopCategories: {
           where: { isActive: true },
+          include: {
+            _count: {
+              select: {
+                products: {
+                  where: { status: 'PUBLISHED', isAvailable: true },
+                },
+              },
+            },
+          },
           orderBy: { displayOrder: 'asc' },
         },
         products: {
@@ -116,26 +126,41 @@ export default async function ShopStorefrontPage(props: {
             <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
               <Package className="w-7 h-7" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-2">Catalogue In Preparation</h3>
+            <h3 className="text-xl font-bold text-slate-900 mb-2">
+              {categorySlug && categorySlug !== 'all'
+                ? 'No Products In This Category'
+                : 'Catalogue In Preparation'}
+            </h3>
             <p className="text-xs text-slate-500 leading-relaxed mb-6">
-              {shop.name} has secured their storefront in The Ultimate Virtual Mall and is currently
-              preparing their product listings.
+              {categorySlug && categorySlug !== 'all'
+                ? `There are currently no products listed under "${shop.shopCategories.find((c: any) => c.slug === categorySlug)?.name || categorySlug}" for ${shop.name}. Browse other categories or view all products.`
+                : `${shop.name} has secured their storefront in The Ultimate Virtual Mall and is currently preparing their product listings.`}
             </p>
-            {shop.whatsappNumber && (
-              <a
-                href={buildShopWhatsAppLink({
-                  whatsappNumber: shop.whatsappNumber,
-                  shopName: shop.name,
-                  shopUrl: `https://theultimatemall.com/shops/${shop.slug}`,
-                })}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow transition"
-              >
-                <MessageCircle className="w-4 h-4" />
-                <span>Contact Merchant on WhatsApp</span>
-              </a>
-            )}
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {categorySlug && categorySlug !== 'all' && (
+                <Link
+                  href={`/shops/${shop.slug}`}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow transition"
+                >
+                  <span>View All Shop Products</span>
+                </Link>
+              )}
+              {shop.whatsappNumber && (
+                <a
+                  href={buildShopWhatsAppLink({
+                    whatsappNumber: shop.whatsappNumber,
+                    shopName: shop.name,
+                    shopUrl: `https://theultimatemall.com/shops/${shop.slug}`,
+                  })}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow transition"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>Contact Merchant on WhatsApp</span>
+                </a>
+              )}
+            </div>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
