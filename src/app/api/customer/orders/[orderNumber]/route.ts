@@ -9,6 +9,7 @@ export async function GET(
   try {
     const { orderNumber } = await context.params;
     const user = await getCurrentUser();
+    const ref = req.nextUrl.searchParams.get('ref');
 
     const order = await prisma.parentOrder.findUnique({
       where: { orderNumber },
@@ -36,8 +37,11 @@ export async function GET(
       return NextResponse.json({ error: 'Order not found' }, { status: 404 });
     }
 
-    // If order has customerId and user is signed in, verify ownership (unless super admin)
-    if (order.customerId && user && user.role !== 'SUPER_ADMIN' && order.customerId !== user.id) {
+    const isSuperAdmin = user?.role === 'SUPER_ADMIN';
+    const isOwner = user && order.customerId === user.id;
+    const hasValidRef = ref && order.paymentTransactions.some((pt) => pt.reference === ref);
+
+    if (!isSuperAdmin && !isOwner && !hasValidRef) {
       return NextResponse.json({ error: 'Unauthorized to view this order' }, { status: 403 });
     }
 

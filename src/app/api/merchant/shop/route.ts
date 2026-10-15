@@ -1,86 +1,57 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { requireMerchant } from '@/lib/auth';
-import { TemplateStyle } from '@prisma/client';
+import { getMerchantContext } from '@/lib/merchant';
+import { shopPatchSchema } from '@/lib/validation';
+import { apiError, readJson } from '@/lib/http';
 
 export async function GET() {
   try {
-    const user = await requireMerchant();
+    const { shop } = await getMerchantContext();
 
-    const shop = await prisma.shop.findFirst({
-      where: { ownerId: user.id },
+    const fullShop = await prisma.shop.findUnique({
+      where: { id: shop.id },
       include: {
         shopCategories: { orderBy: { displayOrder: 'asc' } },
         _count: { select: { products: true, sellerOrders: true } },
       },
     });
 
-    if (!shop) {
-      return NextResponse.json({ error: 'Shop not found for this account' }, { status: 404 });
-    }
-
-    return NextResponse.json({ shop });
+    return NextResponse.json({ shop: fullShop });
   } catch (error) {
-    if (error instanceof Error && error.message.includes('FORBIDDEN')) {
-      return NextResponse.json({ error: 'Merchant authorization required' }, { status: 403 });
-    }
-    return NextResponse.json({ error: 'Failed to fetch shop profile' }, { status: 500 });
+    return apiError(error, 'merchant.shop.get');
   }
 }
 
 export async function PATCH(req: NextRequest) {
   try {
-    const user = await requireMerchant();
+    const { shop } = await getMerchantContext({ requireActive: true });
 
-    const shop = await prisma.shop.findFirst({
-      where: { ownerId: user.id },
-    });
-
-    if (!shop) {
-      return NextResponse.json({ error: 'Shop not found' }, { status: 404 });
-    }
-
-    const body = await req.json();
-    const {
-      name,
-      tagline,
-      description,
-      logoUrl,
-      bannerUrl,
-      location,
-      phone,
-      whatsappNumber,
-      themeColor,
-      templateStyle,
-      deliveryPolicy,
-      returnPolicy,
-      pickupAvailable,
-      baseDeliveryFee,
-    } = body;
+    const body = await readJson(req);
+    const parsed = shopPatchSchema.parse(body);
 
     const updatedShop = await prisma.shop.update({
       where: { id: shop.id },
       data: {
-        ...(name ? { name: name.trim() } : {}),
-        ...(tagline !== undefined ? { tagline: tagline?.trim() } : {}),
-        ...(description !== undefined ? { description: description?.trim() } : {}),
-        ...(logoUrl !== undefined ? { logoUrl } : {}),
-        ...(bannerUrl !== undefined ? { bannerUrl } : {}),
-        ...(location ? { location: location.trim() } : {}),
-        ...(phone ? { phone: phone.trim() } : {}),
-        ...(whatsappNumber !== undefined ? { whatsappNumber: whatsappNumber?.trim() } : {}),
-        ...(themeColor ? { themeColor } : {}),
-        ...(templateStyle ? { templateStyle: templateStyle as TemplateStyle } : {}),
-        ...(deliveryPolicy !== undefined ? { deliveryPolicy } : {}),
-        ...(returnPolicy !== undefined ? { returnPolicy } : {}),
-        ...(typeof pickupAvailable === 'boolean' ? { pickupAvailable } : {}),
-        ...(baseDeliveryFee !== undefined ? { baseDeliveryFee: Number(baseDeliveryFee) } : {}),
+        ...(parsed.name ? { name: parsed.name } : {}),
+        ...(parsed.tagline !== undefined ? { tagline: parsed.tagline } : {}),
+        ...(parsed.description !== undefined ? { description: parsed.description } : {}),
+        ...(parsed.logoUrl !== undefined ? { logoUrl: parsed.logoUrl } : {}),
+        ...(parsed.bannerUrl !== undefined ? { bannerUrl: parsed.bannerUrl } : {}),
+        ...(parsed.location ? { location: parsed.location } : {}),
+        ...(parsed.phone ? { phone: parsed.phone } : {}),
+        ...(parsed.whatsappNumber !== undefined ? { whatsappNumber: parsed.whatsappNumber } : {}),
+        ...(parsed.themeColor ? { themeColor: parsed.themeColor } : {}),
+        ...(parsed.templateStyle ? { templateStyle: parsed.templateStyle } : {}),
+        ...(parsed.deliveryPolicy !== undefined ? { deliveryPolicy: parsed.deliveryPolicy } : {}),
+        ...(parsed.returnPolicy !== undefined ? { returnPolicy: parsed.returnPolicy } : {}),
+        ...(typeof parsed.pickupAvailable === 'boolean' ? { pickupAvailable: parsed.pickupAvailable } : {}),
+        ...(parsed.baseDeliveryFee !== undefined ? { baseDeliveryFee: parsed.baseDeliveryFee } : {}),
       },
     });
 
     return NextResponse.json({ success: true, shop: updatedShop });
   } catch (error) {
-    console.error('Update shop error:', error);
-    return NextResponse.json({ error: 'Failed to update shop profile' }, { status: 500 });
+    return apiError(error, 'merchant.shop.patch');
   }
 }
+

@@ -1,18 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { requireSuperAdmin } from '@/lib/auth';
+import { apiError, readJson } from '@/lib/http';
 
 export async function GET() {
-  const config = await prisma.platformConfig.findUnique({
-    where: { id: 'default' },
-  });
-  return NextResponse.json({ config });
+  try {
+    await requireSuperAdmin();
+    const config = await prisma.platformConfig.findUnique({
+      where: { id: 'default' },
+    });
+    return NextResponse.json({ config });
+  } catch (error) {
+    return apiError(error, 'admin.config.get');
+  }
 }
 
 export async function POST(req: NextRequest) {
   try {
     const admin = await requireSuperAdmin();
-    const body = await req.json();
+    const body = (await readJson(req)) as any;
     const {
       mallName,
       mallTagline,
@@ -21,7 +27,7 @@ export async function POST(req: NextRequest) {
       whatsappSupport,
       defaultCommissionPercent,
       maintenanceMode,
-    } = body;
+    } = body || {};
 
     const config = await prisma.platformConfig.upsert({
       where: { id: 'default' },
@@ -61,9 +67,6 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true, config });
   } catch (error) {
-    if (error instanceof Error && error.message === 'FORBIDDEN_NOT_SUPER_ADMIN') {
-      return NextResponse.json({ error: 'Super Admin access required' }, { status: 403 });
-    }
-    return NextResponse.json({ error: 'Failed to update config' }, { status: 500 });
+    return apiError(error, 'admin.config.post');
   }
 }

@@ -7,6 +7,7 @@ import { Footer } from '@/components/Footer';
 import { CartDrawer } from '@/components/CartDrawer';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
   title: "The Ultimate Virtual Mall | Ghana's Premier Digital Shopping Destination",
   description:
     'A central digital shopping mall hosting Ghana’s finest independent businesses and artisans. Shop multi-vendor carts with seamless Mobile Money and card payments.',

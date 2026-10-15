@@ -7,7 +7,31 @@ import { EmptyState } from '@/components/EmptyState';
 import { Package, ShieldCheck, Truck, RotateCcw, MessageCircle } from 'lucide-react';
 import { buildShopWhatsAppLink } from '@/lib/whatsapp';
 
+import { Metadata } from 'next';
+
 export const dynamic = 'force-dynamic';
+
+export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  try {
+    const { slug } = await props.params;
+    const shop = await prisma.shop.findUnique({
+      where: { slug },
+      select: { name: true, description: true, tagline: true, location: true },
+    });
+    if (!shop) return { title: 'Shop Not Found | The Ultimate Virtual Mall' };
+    const desc = shop.tagline || shop.description || `Shop at ${shop.name} on The Ultimate Virtual Mall Ghana.`;
+    return {
+      title: `${shop.name} | The Ultimate Virtual Mall`,
+      description: desc.slice(0, 160),
+      openGraph: {
+        title: `${shop.name} | Storefront`,
+        description: desc.slice(0, 160),
+      },
+    };
+  } catch {
+    return { title: 'Shop Storefront | The Ultimate Virtual Mall' };
+  }
+}
 
 export default async function ShopStorefrontPage(props: {
   params: Promise<{ slug: string }>;

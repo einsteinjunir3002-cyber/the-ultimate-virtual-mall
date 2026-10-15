@@ -1,36 +1,38 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { requireAuth } from '@/lib/auth';
-import { PaymentStatus } from '@prisma/client';
+import { PaymentStatus, FulfillmentStatus } from '@prisma/client';
+import { reviewSchema } from '@/lib/validation';
+import { apiError, HttpError, readJson } from '@/lib/http';
 
 export async function POST(req: NextRequest) {
   try {
     const user = await requireAuth();
-    const body = await req.json();
-    const { productId, rating, comment } = body;
-
-    if (!productId || !rating || !comment) {
-      return NextResponse.json({ error: 'Product ID, rating (1-5), and comment are required' }, { status: 400 });
-    }
-
-    const numRating = parseInt(rating, 10);
-    if (numRating < 1 || numRating > 5) {
-      return NextResponse.json({ error: 'Rating must be between 1 and 5 stars' }, { status: 400 });
-    }
+    const body = await readJson(req);
+    const parsed = reviewSchema.parse(body);
 
     const product = await prisma.product.findUnique({
-      where: { id: productId },
+      where: { id: parsed.productId },
     });
 
     if (!product) {
-      return NextResponse.json({ error: 'Product not found' }, { status: 404 });
+      throw new HttpError(404, 'Product not found');
     }
 
-    // Verified purchase check: user must have a paid order containing this product
+    // Merchants cannot review products from their own shop
+    const ownedShop = await prisma.shop.findFirst({
+      where: { ownerId: user.id, id: product.shopId },
+    });
+    if (ownedShop) {
+      throw new HttpError(403, 'Merchants cannot review products from their own shop');
+    }
+
+    // Verified purchase check: user must have an order with this product that is PAID and DELIVERED
     const verifiedPurchase = await prisma.orderItem.findFirst({
       where: {
-        productId,
+        productId: parsed.productId,
         sellerOrder: {
+          status: FulfillmentStatus.DELIVERED,
           parentOrder: {
             customerId: user.id,
             paymentStatus: PaymentStatus.PAID,
@@ -40,36 +42,30 @@ export async function POST(req: NextRequest) {
     });
 
     if (!verifiedPurchase) {
-      return NextResponse.json(
-        {
-          error:
-            'Only verified purchasers who have ordered and paid for this item can submit a product review.',
-        },
-        { status: 403 }
+      throw new HttpError(
+        403,
+        'Only verified purchasers whose order has been delivered can submit a product review.'
       );
     }
 
     // Check if user already reviewed this product
     const existingReview = await prisma.review.findFirst({
-      where: { productId, customerId: user.id },
+      where: { productId: parsed.productId, customerId: user.id },
     });
 
     if (existingReview) {
-      return NextResponse.json(
-        { error: 'You have already submitted a review for this product' },
-        { status: 400 }
-      );
+      throw new HttpError(400, 'You have already submitted a review for this product');
     }
 
     // Create review and update shop average rating
     const review = await prisma.$transaction(async (tx) => {
       const rev = await tx.review.create({
         data: {
-          productId,
+          productId: parsed.productId,
           shopId: product.shopId,
           customerId: user.id,
-          rating: numRating,
-          comment: comment.trim(),
+          rating: parsed.rating,
+          comment: parsed.comment,
           isVerifiedPurchase: true,
         },
       });
@@ -96,10 +92,6 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true, review });
   } catch (error) {
-    console.error('Review submission error:', error);
-    if (error instanceof Error && error.message === 'UNAUTHORIZED') {
-      return NextResponse.json({ error: 'Please sign in to submit a review' }, { status: 401 });
-    }
-    return NextResponse.json({ error: 'Failed to submit review' }, { status: 500 });
+    return apiError(error, 'public.reviews.post');
   }
 }

@@ -34,7 +34,7 @@ function VerifyPaymentContent() {
           setOrderNumber(data.orderNumber);
           // Redirect after 2 seconds
           setTimeout(() => {
-            router.push(`/orders/${data.orderNumber}`);
+            router.push(`/orders/${data.orderNumber}?ref=${encodeURIComponent(reference)}`);
           }, 2000);
         } else {
           setStatus('failed');
@@ -74,7 +74,7 @@ function VerifyPaymentContent() {
             </p>
             <p className="text-[11px] text-slate-400">Redirecting to your order receipt...</p>
             <Link
-              href={`/orders/${orderNumber}`}
+              href={`/orders/${orderNumber}?ref=${encodeURIComponent(reference || '')}`}
               className="inline-block mt-2 px-5 py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold"
             >
               View Order Confirmation

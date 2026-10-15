@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { requireSuperAdmin } from '@/lib/auth';
+import { apiError } from '@/lib/http';
 
 export async function GET() {
   try {
@@ -23,9 +24,6 @@ export async function GET() {
 
     return NextResponse.json({ orders });
   } catch (error) {
-    if (error instanceof Error && error.message === 'FORBIDDEN_NOT_SUPER_ADMIN') {
-      return NextResponse.json({ error: 'Super Admin access required' }, { status: 403 });
-    }
-    return NextResponse.json({ error: 'Failed to fetch platform orders' }, { status: 500 });
+    return apiError(error, 'admin.orders.get');
   }
 }

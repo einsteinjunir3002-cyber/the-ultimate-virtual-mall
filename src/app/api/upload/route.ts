@@ -1,56 +1,42 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { requireAuth } from '@/lib/auth';
-import fs from 'fs';
-import path from 'path';
+import { requireMerchant } from '@/lib/auth';
+import { apiError, HttpError } from '@/lib/http';
+import { detectMediaType, MAX_IMAGE_BYTES, MAX_VIDEO_BYTES, saveMedia } from '@/lib/storage';
+import { clientIp, hit } from '@/lib/rate-limit';
 
+/**
+ * Media (image/video) upload for merchants/admins only.
+ * The file type is decided from the file's real bytes (magic numbers); the
+ * client-supplied name, extension and MIME type are ignored. The stored name is
+ * generated server-side.
+ */
 export async function POST(req: NextRequest) {
   try {
-    await requireAuth();
+    const user = await requireMerchant();
+
+    const rl = hit(`upload:${user.id}:${clientIp(req)}`, 60, 10 * 60_000);
+    if (!rl.ok) throw new HttpError(429, 'Too many uploads. Please wait a few minutes.');
 
     const formData = await req.formData();
-    const file = formData.get('file') as File | null;
+    const file = formData.get('file');
+    if (!(file instanceof File)) throw new HttpError(400, 'No file uploaded');
+    if (file.size === 0) throw new HttpError(400, 'The uploaded file is empty');
+    if (file.size > MAX_VIDEO_BYTES) throw new HttpError(400, 'File size must be under 50MB');
 
-    if (!file) {
-      return NextResponse.json({ error: 'No file uploaded' }, { status: 400 });
+    const buffer = Buffer.from(await file.arrayBuffer());
+    const kind = detectMediaType(buffer);
+    if (!kind) {
+      throw new HttpError(400, 'Only genuine JPG, PNG, WEBP, GIF images or MP4, WEBM videos are allowed');
     }
 
-    // Validate size (5MB limit)
-    if (file.size > 5 * 1024 * 1024) {
-      return NextResponse.json({ error: 'File size must be under 5MB' }, { status: 400 });
+    if ((kind === 'jpg' || kind === 'png' || kind === 'webp' || kind === 'gif') && file.size > MAX_IMAGE_BYTES) {
+      throw new HttpError(400, 'Image size must be under 10MB');
     }
 
-    // Validate mime type
-    const validTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
-    if (!validTypes.includes(file.type)) {
-      return NextResponse.json(
-        { error: 'Only JPG, PNG, WEBP, and GIF images are allowed' },
-        { status: 400 }
-      );
-    }
-
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-
-    // Save to public/uploads directory
-    const uploadsDir = path.join(process.cwd(), 'public', 'uploads');
-    if (!fs.existsSync(uploadsDir)) {
-      fs.mkdirSync(uploadsDir, { recursive: true });
-    }
-
-    const ext = file.name.split('.').pop()?.toLowerCase() || 'jpg';
-    const filename = `img-${Date.now()}-${Math.random().toString(36).substring(2, 8)}.${ext}`;
-    const filePath = path.join(uploadsDir, filename);
-
-    fs.writeFileSync(filePath, buffer);
-
-    const publicUrl = `/uploads/${filename}`;
-
-    return NextResponse.json({
-      success: true,
-      url: publicUrl,
-    });
+    const saved = await saveMedia(buffer, kind);
+    return NextResponse.json({ success: true, url: saved.url, storage: saved.storage, kind });
   } catch (error) {
-    console.error('Upload error:', error);
-    return NextResponse.json({ error: 'Image upload failed' }, { status: 500 });
+    return apiError(error, 'upload');
   }
 }
+

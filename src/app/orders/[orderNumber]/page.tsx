@@ -16,10 +16,17 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 
+import { getCurrentUser } from '@/lib/auth';
+
+export const dynamic = 'force-dynamic';
+
 export default async function OrderDetailPage(props: {
   params: Promise<{ orderNumber: string }>;
+  searchParams?: Promise<{ ref?: string }>;
 }) {
   const { orderNumber } = await props.params;
+  const searchParams = props.searchParams ? await props.searchParams : {};
+  const ref = searchParams?.ref;
 
   const order = await prisma.parentOrder.findUnique({
     where: { orderNumber },
@@ -44,6 +51,15 @@ export default async function OrderDetailPage(props: {
   });
 
   if (!order) {
+    notFound();
+  }
+
+  const user = await getCurrentUser();
+  const isSuperAdmin = user?.role === 'SUPER_ADMIN';
+  const isOwner = Boolean(user && order.customerId === user.id);
+  const hasValidRef = Boolean(ref && order.paymentTransactions.some((pt) => pt.reference === ref));
+
+  if (!isSuperAdmin && !isOwner && !hasValidRef) {
     notFound();
   }
 

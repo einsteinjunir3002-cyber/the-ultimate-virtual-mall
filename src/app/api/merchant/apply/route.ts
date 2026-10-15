@@ -1,35 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { requireAuth } from '@/lib/auth';
-import { ApplicationStatus, Role } from '@prisma/client';
+import { ApplicationStatus } from '@prisma/client';
+import { applicationSchema } from '@/lib/validation';
+import { apiError, HttpError, readJson } from '@/lib/http';
 
 export async function POST(req: NextRequest) {
   try {
     const user = await requireAuth();
 
-    const body = await req.json();
-    const {
-      shopName,
-      desiredSlug,
-      category,
-      description,
-      phone,
-      whatsappNumber,
-      location,
-      businessRegNumber,
-      nationalIdNumber,
-      proposedDelivery,
-    } = body;
+    const body = await readJson(req);
+    const parsed = applicationSchema.parse(body);
 
-    if (!shopName || !desiredSlug || !category || !description || !phone || !location) {
-      return NextResponse.json(
-        { error: 'Please provide all required business details' },
-        { status: 400 }
-      );
-    }
-
-    // Clean and validate slug
-    const cleanSlug = desiredSlug
+    const cleanSlug = parsed.desiredSlug
       .toLowerCase()
       .trim()
       .replace(/[^a-z0-9-]/g, '-')
@@ -37,10 +20,7 @@ export async function POST(req: NextRequest) {
       .replace(/^-|-$/g, '');
 
     if (cleanSlug.length < 3) {
-      return NextResponse.json(
-        { error: 'Shop URL slug must be at least 3 characters long and alphanumeric' },
-        { status: 400 }
-      );
+      throw new HttpError(400, 'Shop URL slug must be at least 3 characters long and alphanumeric');
     }
 
     // Check if slug is reserved or taken by an active shop
@@ -49,10 +29,7 @@ export async function POST(req: NextRequest) {
     });
 
     if (existingShop) {
-      return NextResponse.json(
-        { error: 'This shop URL is already taken. Please choose another unique name.' },
-        { status: 409 }
-      );
+      throw new HttpError(409, 'This shop URL is already taken. Please choose another unique name.');
     }
 
     // Check if user already has an active shop
@@ -61,10 +38,7 @@ export async function POST(req: NextRequest) {
     });
 
     if (userShop) {
-      return NextResponse.json(
-        { error: 'You already operate a registered shop on this account.' },
-        { status: 400 }
-      );
+      throw new HttpError(400, 'You already operate a registered shop on this account.');
     }
 
     // Check if user has an existing pending application
@@ -76,37 +50,28 @@ export async function POST(req: NextRequest) {
     });
 
     if (existingApp) {
-      return NextResponse.json(
-        { error: 'You already have an application under review by mall management.' },
-        { status: 400 }
-      );
+      throw new HttpError(400, 'You already have an application under review by mall management.');
     }
 
     // Create SellerApplication
     const application = await prisma.sellerApplication.create({
       data: {
         userId: user.id,
-        shopName: shopName.trim(),
+        shopName: parsed.shopName,
         desiredSlug: cleanSlug,
-        category,
-        description: description.trim(),
-        phone: phone.trim(),
-        whatsappNumber: whatsappNumber ? whatsappNumber.trim() : null,
-        location: location.trim(),
-        businessRegNumber: businessRegNumber ? businessRegNumber.trim() : null,
-        nationalIdNumber: nationalIdNumber ? nationalIdNumber.trim() : null,
-        proposedDelivery: proposedDelivery ? proposedDelivery.trim() : null,
+        category: parsed.category,
+        description: parsed.description,
+        phone: parsed.phone,
+        whatsappNumber: parsed.whatsappNumber || null,
+        location: parsed.location,
+        businessRegNumber: parsed.businessRegNumber || null,
+        nationalIdNumber: parsed.nationalIdNumber || null,
+        proposedDelivery: parsed.proposedDelivery || null,
         status: ApplicationStatus.PENDING,
       },
     });
 
-    // Ensure user role is at least MERCHANT
-    if (user.role === Role.CUSTOMER) {
-      await prisma.user.update({
-        where: { id: user.id },
-        data: { role: Role.MERCHANT },
-      });
-    }
+    // Role is NOT promoted to MERCHANT here; superadmin approval promotes it.
 
     // Audit log
     await prisma.auditLog.create({
@@ -116,7 +81,7 @@ export async function POST(req: NextRequest) {
         action: 'SUBMIT_MERCHANT_APPLICATION',
         entity: 'SellerApplication',
         entityId: application.id,
-        details: { shopName, desiredSlug: cleanSlug, category },
+        details: { shopName: parsed.shopName, desiredSlug: cleanSlug, category: parsed.category },
       },
     });
 
@@ -126,11 +91,7 @@ export async function POST(req: NextRequest) {
       application,
     });
   } catch (error) {
-    console.error('Merchant application error:', error);
-    if (error instanceof Error && error.message === 'UNAUTHORIZED') {
-      return NextResponse.json({ error: 'Please sign in to submit a shop application' }, { status: 401 });
-    }
-    return NextResponse.json({ error: 'Failed to submit application' }, { status: 500 });
+    return apiError(error, 'merchant.apply');
   }
 }
 

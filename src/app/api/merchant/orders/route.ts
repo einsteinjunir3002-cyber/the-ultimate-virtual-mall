@@ -1,13 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { requireMerchant } from '@/lib/auth';
+import { getMerchantContext } from '@/lib/merchant';
 import { FulfillmentStatus } from '@prisma/client';
+import { apiError, HttpError, readJson } from '@/lib/http';
+
+const VALID_STATUSES = new Set<FulfillmentStatus>([
+  FulfillmentStatus.PENDING,
+  FulfillmentStatus.CONFIRMED,
+  FulfillmentStatus.PROCESSING,
+  FulfillmentStatus.SHIPPED,
+  FulfillmentStatus.READY_FOR_PICKUP,
+  FulfillmentStatus.DELIVERED,
+  FulfillmentStatus.CANCELLED,
+]);
 
 export async function GET() {
   try {
-    const user = await requireMerchant();
-    const shop = await prisma.shop.findFirst({ where: { ownerId: user.id } });
-    if (!shop) return NextResponse.json({ error: 'Shop not found' }, { status: 404 });
+    const { shop } = await getMerchantContext();
 
     const orders = await prisma.sellerOrder.findMany({
       where: { shopId: shop.id },
@@ -32,31 +41,43 @@ export async function GET() {
 
     return NextResponse.json({ orders });
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to fetch merchant orders' }, { status: 500 });
+    return apiError(error, 'merchant.orders.get');
   }
 }
 
 export async function PATCH(req: NextRequest) {
   try {
-    const user = await requireMerchant();
-    const shop = await prisma.shop.findFirst({ where: { ownerId: user.id } });
-    if (!shop) return NextResponse.json({ error: 'Shop not found' }, { status: 404 });
+    const { shop } = await getMerchantContext({ requireActive: true });
 
-    const body = await req.json();
-    const { orderId, status, trackingNumber, courierName, sellerNotes } = body;
+    const body = (await readJson(req)) as any;
+    const { orderId, status, trackingNumber, courierName, sellerNotes } = body || {};
 
-    if (!orderId) return NextResponse.json({ error: 'Order ID is required' }, { status: 400 });
+    if (!orderId) throw new HttpError(400, 'Order ID is required');
 
     // Strict tenant check: make sure this seller suborder belongs to the merchant's shop
     const existing = await prisma.sellerOrder.findUnique({
       where: { id: orderId },
+      include: { parentOrder: true },
     });
 
     if (!existing || existing.shopId !== shop.id) {
-      return NextResponse.json(
-        { error: 'Forbidden: You do not have permission to manage this order' },
-        { status: 403 }
-      );
+      throw new HttpError(403, 'Forbidden: You do not have permission to manage this order');
+    }
+
+    if (status !== undefined) {
+      if (!VALID_STATUSES.has(status as FulfillmentStatus)) {
+        throw new HttpError(400, `Invalid status value: ${status}`);
+      }
+
+      // Order must be paid before fulfillment status can progress beyond PENDING
+      if (existing.parentOrder.paymentStatus !== 'PAID' && status !== FulfillmentStatus.PENDING && status !== FulfillmentStatus.CANCELLED) {
+        throw new HttpError(400, 'Cannot change fulfillment status on an unpaid order');
+      }
+
+      // Block merchant cancelling paid orders unilaterally (requires admin refund handling)
+      if (status === FulfillmentStatus.CANCELLED && existing.parentOrder.paymentStatus === 'PAID') {
+        throw new HttpError(400, 'Paid orders cannot be cancelled directly by merchant. Contact mall admin for refund & cancellation.');
+      }
     }
 
     const updated = await prisma.sellerOrder.update({
@@ -71,7 +92,6 @@ export async function PATCH(req: NextRequest) {
 
     return NextResponse.json({ success: true, order: updated });
   } catch (error) {
-    console.error('Update order status error:', error);
-    return NextResponse.json({ error: 'Failed to update order' }, { status: 500 });
+    return apiError(error, 'merchant.orders.patch');
   }
 }

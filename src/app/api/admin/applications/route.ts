@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { requireSuperAdmin } from '@/lib/auth';
 import { ApplicationStatus, Role, ShopStatus, TemplateStyle } from '@prisma/client';
+import { apiError, readJson } from '@/lib/http';
 
 export async function GET() {
   try {
@@ -18,18 +19,15 @@ export async function GET() {
 
     return NextResponse.json({ applications });
   } catch (error) {
-    if (error instanceof Error && error.message === 'FORBIDDEN_NOT_SUPER_ADMIN') {
-      return NextResponse.json({ error: 'Super Admin access required' }, { status: 403 });
-    }
-    return NextResponse.json({ error: 'Failed to fetch applications' }, { status: 500 });
+    return apiError(error, 'admin.applications.get');
   }
 }
 
 export async function POST(req: NextRequest) {
   try {
     const admin = await requireSuperAdmin();
-    const body = await req.json();
-    const { applicationId, action, adminNotes } = body;
+    const body = (await readJson(req)) as any;
+    const { applicationId, action, adminNotes } = body || {};
 
     if (!applicationId || !action) {
       return NextResponse.json({ error: 'Application ID and action are required' }, { status: 400 });
@@ -161,10 +159,6 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ error: 'Invalid action' }, { status: 400 });
   } catch (error) {
-    console.error('Admin application action error:', error);
-    if (error instanceof Error && error.message === 'FORBIDDEN_NOT_SUPER_ADMIN') {
-      return NextResponse.json({ error: 'Super Admin access required' }, { status: 403 });
-    }
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    return apiError(error, 'admin.applications.post');
   }
 }

@@ -9,13 +9,16 @@
     "start": "next start",
     "lint": "eslint",
     "db:seed": "tsx prisma/seed.ts",
-    "test": "tsx scripts/run-e2e-tests.ts"
+    "test": "tsx scripts/run-e2e-tests.ts",
+    "test:unit": "tsx --test tests/core.test.ts",
+    "test:all": "tsx scripts/run-e2e-tests.ts && tsx --test tests/core.test.ts"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.4.1",
+    "@vercel/blob": "^2.8.2",
     "bcryptjs": "^3.0.3",
     "clsx": "^2.1.1",
     "jose": "^6.2.12",

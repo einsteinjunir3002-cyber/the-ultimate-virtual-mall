@@ -1,7 +1,18 @@
 import crypto from 'crypto';
 
-const PAYSTACK_SECRET_KEY = process.env.PAYSTACK_SECRET_KEY || 'sk_test_placeholder_key';
 const PAYSTACK_BASE_URL = 'https://api.paystack.co';
+
+/**
+ * Returns the configured Paystack secret key, or null when payments are not
+ * configured. There is deliberately NO simulated/demo mode: without a real
+ * `sk_test_…` / `sk_live_…` key, payment calls fail closed.
+ */
+function secretKey(): string | null {
+  const key = (process.env.PAYSTACK_SECRET_KEY || '').trim().replace(/^["']|["']$/g, '');
+  return /^sk_(test|live)_[A-Za-z0-9_]+$/.test(key) ? key : null;
+}
+
+export const isPaystackConfigured = () => secretKey() !== null;
 
 export interface PaystackInitResponse {
   status: boolean;
@@ -18,135 +29,79 @@ export interface PaystackVerifyResponse {
   message: string;
   data?: {
     id: number;
-    status: string; // 'success', 'failed', 'abandoned'
+    status: string; // 'success' | 'failed' | 'abandoned' | 'ongoing' | 'pending' | 'reversed'
     reference: string;
-    amount: number; // in pesewas (GHS minor units)
+    amount: number; // pesewas (GHS minor units)
     currency: string;
-    channel: string; // 'mobile_money', 'card'
-    paid_at: string;
+    channel: string; // 'mobile_money' | 'card' | ...
+    paid_at: string | null;
     gateway_response: string;
-    customer: {
-      email: string;
-      phone?: string;
-    };
+    customer: { email: string; phone?: string };
   };
 }
 
-/**
- * Initialize a Paystack transaction for Ghana (supports Mobile Money & Bank Cards in GHS)
- */
+/** Initialise a Paystack transaction (GHS, card + mobile money). Amount is in integer pesewas. */
 export async function initializePaystackTransaction(params: {
   email: string;
-  amountInGhs: number; // e.g. 150.50
+  amountPesewas: number;
   reference: string;
   callbackUrl: string;
   metadata?: Record<string, unknown>;
 }): Promise<PaystackInitResponse> {
-  const amountInPesewas = Math.round(params.amountInGhs * 100);
-
-  // If secret key is not a real test/live key (starts with sk_test_ or sk_live_), or running in isolated offline environment
-  const isDemoKey = !PAYSTACK_SECRET_KEY || PAYSTACK_SECRET_KEY.includes('placeholder');
-
-  if (isDemoKey) {
-    // Return a verified test simulation link pointing to our verification callback
-    return {
-      status: true,
-      message: 'Authorization URL created (Local/Test Mode)',
-      data: {
-        authorization_url: `${params.callbackUrl}?reference=${params.reference}&test_mode=true`,
-        access_code: `mock_acc_${params.reference}`,
-        reference: params.reference,
-      },
-    };
+  const key = secretKey();
+  if (!key) {
+    return { status: false, message: 'Online payments are not configured on this server yet.' };
+  }
+  if (!Number.isInteger(params.amountPesewas) || params.amountPesewas <= 0) {
+    return { status: false, message: 'Invalid payment amount' };
   }
 
   try {
     const response = await fetch(`${PAYSTACK_BASE_URL}/transaction/initialize`, {
       method: 'POST',
-      headers: {
-        Authorization: `Bearer ${PAYSTACK_SECRET_KEY}`,
-        'Content-Type': 'application/json',
-      },
+      headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email: params.email,
-        amount: amountInPesewas,
+        amount: params.amountPesewas,
         currency: 'GHS',
         reference: params.reference,
         callback_url: params.callbackUrl,
         channels: ['card', 'mobile_money'],
         metadata: params.metadata,
       }),
+      signal: AbortSignal.timeout(15_000),
     });
-
-    const data = await response.json();
-    return data;
+    return (await response.json()) as PaystackInitResponse;
   } catch (error) {
     console.error('Paystack initialization error:', error);
-    return {
-      status: false,
-      message: error instanceof Error ? error.message : 'Failed to initialize Paystack payment',
-    };
+    return { status: false, message: 'Could not reach the payment provider. Please try again.' };
   }
 }
 
-/**
- * Verify a transaction directly with Paystack API
- */
+/** Verify a transaction directly with Paystack — the only trusted source of payment truth besides signed webhooks. */
 export async function verifyPaystackTransaction(reference: string): Promise<PaystackVerifyResponse> {
-  const isDemoKey = !PAYSTACK_SECRET_KEY || PAYSTACK_SECRET_KEY.includes('placeholder');
-
-  if (isDemoKey) {
-    // If running in development with placeholder keys, allow verified test checkout
-    return {
-      status: true,
-      message: 'Verification successful (Simulated Test Mode)',
-      data: {
-        id: Math.floor(Math.random() * 1000000),
-        status: 'success',
-        reference,
-        amount: 10000,
-        currency: 'GHS',
-        channel: 'mobile_money',
-        paid_at: new Date().toISOString(),
-        gateway_response: 'Successful Test Transaction',
-        customer: {
-          email: 'customer@example.com',
-        },
-      },
-    };
-  }
+  const key = secretKey();
+  if (!key) return { status: false, message: 'Online payments are not configured on this server yet.' };
 
   try {
-    const response = await fetch(`${PAYSTACK_BASE_URL}/transaction/verify/${reference}`, {
+    const response = await fetch(`${PAYSTACK_BASE_URL}/transaction/verify/${encodeURIComponent(reference)}`, {
       method: 'GET',
-      headers: {
-        Authorization: `Bearer ${PAYSTACK_SECRET_KEY}`,
-      },
+      headers: { Authorization: `Bearer ${key}` },
+      signal: AbortSignal.timeout(15_000),
     });
-
-    const data = await response.json();
-    return data;
+    return (await response.json()) as PaystackVerifyResponse;
   } catch (error) {
     console.error('Paystack verify error:', error);
-    return {
-      status: false,
-      message: error instanceof Error ? error.message : 'Failed to verify transaction',
-    };
+    return { status: false, message: 'Could not reach the payment provider. Please try again.' };
   }
 }
 
-/**
- * Verify Paystack Webhook HMAC SHA512 signature
- */
-export function verifyPaystackWebhookSignature(
-  rawBody: string,
-  signatureHeader: string | null
-): boolean {
-  if (!signatureHeader) return false;
-  const hash = crypto
-    .createHmac('sha512', PAYSTACK_SECRET_KEY)
-    .update(rawBody)
-    .digest('hex');
-
-  return hash === signatureHeader;
+/** Verify the Paystack webhook HMAC-SHA512 signature using a constant-time comparison. */
+export function verifyPaystackWebhookSignature(rawBody: string, signatureHeader: string | null): boolean {
+  const key = secretKey();
+  if (!key || !signatureHeader) return false;
+  const expected = crypto.createHmac('sha512', key).update(rawBody).digest('hex');
+  const a = Buffer.from(expected, 'utf8');
+  const b = Buffer.from(signatureHeader, 'utf8');
+  return a.length === b.length && crypto.timingSafeEqual(a, b);
 }

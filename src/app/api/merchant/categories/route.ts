@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { requireMerchant } from '@/lib/auth';
+import { getMerchantContext } from '@/lib/merchant';
+import { categorySchema } from '@/lib/validation';
+import { apiError, readJson } from '@/lib/http';
 
 export async function GET() {
   try {
-    const user = await requireMerchant();
-    const shop = await prisma.shop.findFirst({ where: { ownerId: user.id } });
-    if (!shop) return NextResponse.json({ error: 'Shop not found' }, { status: 404 });
+    const { shop } = await getMerchantContext();
 
     const [shopCategories, mallCategories] = await Promise.all([
       prisma.shopCategory.findMany({
@@ -21,25 +21,23 @@ export async function GET() {
 
     return NextResponse.json({ shopCategories, mallCategories });
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to fetch categories' }, { status: 500 });
+    return apiError(error, 'merchant.categories.get');
   }
 }
 
 export async function POST(req: NextRequest) {
   try {
-    const user = await requireMerchant();
-    const shop = await prisma.shop.findFirst({ where: { ownerId: user.id } });
-    if (!shop) return NextResponse.json({ error: 'Shop not found' }, { status: 404 });
+    const { shop } = await getMerchantContext({ requireActive: true });
 
-    const body = await req.json();
-    const { name } = body;
-    if (!name) return NextResponse.json({ error: 'Category name is required' }, { status: 400 });
+    const body = await readJson(req);
+    const { name } = categorySchema.parse(body);
 
     const slug = name
       .toLowerCase()
       .trim()
       .replace(/[^a-z0-9-]/g, '-')
-      .replace(/-+/g, '-');
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '') || 'cat';
 
     const category = await prisma.shopCategory.create({
       data: {
@@ -51,6 +49,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true, category });
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to create category' }, { status: 500 });
+    return apiError(error, 'merchant.categories.post');
   }
 }
+
