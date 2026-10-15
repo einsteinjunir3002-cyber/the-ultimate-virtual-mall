@@ -50,6 +50,6 @@ next-env.d.ts
 .vercel
 .env*
 
-# QA artefacts (downloaded test assets, uploaded files, run state)
+# QA artefacts (downloaded test assets, run state)
 qa-resources/
-public/uploads/
+
