@@ -65,7 +65,11 @@ export default async function HomePage() {
       }),
     ]);
     categories = c;
-    activeShops = s;
+    activeShops = s.sort((a, b) => {
+      if (a.slug === 'accra-gadget-hub-test') return -1;
+      if (b.slug === 'accra-gadget-hub-test') return 1;
+      return 0;
+    });
     recentProducts = p;
   } catch (error) {
     console.warn('Prerender / database fetch fallback on HomePage:', error);

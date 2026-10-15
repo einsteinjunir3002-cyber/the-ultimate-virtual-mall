@@ -48,7 +48,11 @@ export default async function ShopsDirectoryPage(props: {
       }),
     ]);
     categories = c;
-    shops = s;
+    shops = s.sort((a, b) => {
+      if (a.slug === 'accra-gadget-hub-test') return -1;
+      if (b.slug === 'accra-gadget-hub-test') return 1;
+      return 0;
+    });
   } catch (error) {
     console.warn('Prerender / database fetch fallback on ShopsDirectoryPage:', error);
   }
