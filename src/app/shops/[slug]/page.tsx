@@ -7,6 +7,8 @@ import { EmptyState } from '@/components/EmptyState';
 import { Package, ShieldCheck, Truck, RotateCcw, MessageCircle } from 'lucide-react';
 import { buildShopWhatsAppLink } from '@/lib/whatsapp';
 
+export const dynamic = 'force-dynamic';
+
 export default async function ShopStorefrontPage(props: {
   params: Promise<{ slug: string }>;
   searchParams: Promise<{ category?: string }>;
@@ -14,42 +16,48 @@ export default async function ShopStorefrontPage(props: {
   const { slug } = await props.params;
   const { category: categorySlug } = await props.searchParams;
 
-  const shop = await prisma.shop.findUnique({
-    where: { slug },
-    include: {
-      shopCategories: {
-        where: { isActive: true },
-        orderBy: { displayOrder: 'asc' },
-      },
-      products: {
-        where: {
-          status: 'PUBLISHED',
-          isAvailable: true,
-          ...(categorySlug && categorySlug !== 'all'
-            ? { shopCategory: { slug: categorySlug } }
-            : {}),
+  let shop: any = null;
+
+  try {
+    shop = await prisma.shop.findUnique({
+      where: { slug },
+      include: {
+        shopCategories: {
+          where: { isActive: true },
+          orderBy: { displayOrder: 'asc' },
         },
-        include: {
-          images: { orderBy: { displayOrder: 'asc' } },
-          variants: true,
-          shop: {
-            select: {
-              id: true,
-              name: true,
-              slug: true,
-              baseDeliveryFee: true,
-              whatsappNumber: true,
-              location: true,
+        products: {
+          where: {
+            status: 'PUBLISHED',
+            isAvailable: true,
+            ...(categorySlug && categorySlug !== 'all'
+              ? { shopCategory: { slug: categorySlug } }
+              : {}),
+          },
+          include: {
+            images: { orderBy: { displayOrder: 'asc' } },
+            variants: true,
+            shop: {
+              select: {
+                id: true,
+                name: true,
+                slug: true,
+                baseDeliveryFee: true,
+                whatsappNumber: true,
+                location: true,
+              },
             },
           },
+          orderBy: { createdAt: 'desc' },
         },
-        orderBy: { createdAt: 'desc' },
+        _count: {
+          select: { products: true, reviews: true },
+        },
       },
-      _count: {
-        select: { products: true, reviews: true },
-      },
-    },
-  });
+    });
+  } catch (error) {
+    console.warn('Prerender / database fetch fallback on ShopStorefrontPage:', error);
+  }
 
   if (!shop || shop.status !== 'ACTIVE') {
     notFound();
@@ -70,7 +78,7 @@ export default async function ShopStorefrontPage(props: {
           <div>
             <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
               {categorySlug && categorySlug !== 'all'
-                ? shop.shopCategories.find((c) => c.slug === categorySlug)?.name || 'Products'
+                ? shop.shopCategories.find((c: any) => c.slug === categorySlug)?.name || 'Products'
                 : 'All Shop Items'}
             </h2>
             <p className="text-xs text-slate-500 mt-1">
@@ -107,7 +115,7 @@ export default async function ShopStorefrontPage(props: {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {shop.products.map((product) => (
+            {shop.products.map((product: any) => (
               <ProductCard key={product.id} product={product as any} />
             ))}
           </div>

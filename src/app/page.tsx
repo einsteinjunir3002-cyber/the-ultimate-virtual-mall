@@ -17,46 +17,59 @@ import {
   Package,
 } from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 export default async function HomePage() {
   // Fetch real data from PostgreSQL
-  const [categories, activeShops, recentProducts] = await Promise.all([
-    prisma.mallCategory.findMany({
-      where: { isActive: true },
-      orderBy: { displayOrder: 'asc' },
-    }),
-    prisma.shop.findMany({
-      where: { status: 'ACTIVE' },
-      include: {
-        _count: {
-          select: { products: { where: { status: 'PUBLISHED', isAvailable: true } } },
-        },
-      },
-      take: 6,
-      orderBy: [{ isFeatured: 'desc' }, { createdAt: 'desc' }],
-    }),
-    prisma.product.findMany({
-      where: {
-        status: 'PUBLISHED',
-        isAvailable: true,
-        shop: { status: 'ACTIVE' },
-      },
-      include: {
-        shop: {
-          select: {
-            id: true,
-            name: true,
-            slug: true,
-            baseDeliveryFee: true,
-            whatsappNumber: true,
-            location: true,
+  let categories: any[] = [];
+  let activeShops: any[] = [];
+  let recentProducts: any[] = [];
+
+  try {
+    const [c, s, p] = await Promise.all([
+      prisma.mallCategory.findMany({
+        where: { isActive: true },
+        orderBy: { displayOrder: 'asc' },
+      }),
+      prisma.shop.findMany({
+        where: { status: 'ACTIVE' },
+        include: {
+          _count: {
+            select: { products: { where: { status: 'PUBLISHED', isAvailable: true } } },
           },
         },
-        images: { orderBy: { displayOrder: 'asc' } },
-      },
-      take: 8,
-      orderBy: { createdAt: 'desc' },
-    }),
-  ]);
+        take: 6,
+        orderBy: [{ isFeatured: 'desc' }, { createdAt: 'desc' }],
+      }),
+      prisma.product.findMany({
+        where: {
+          status: 'PUBLISHED',
+          isAvailable: true,
+          shop: { status: 'ACTIVE' },
+        },
+        include: {
+          shop: {
+            select: {
+              id: true,
+              name: true,
+              slug: true,
+              baseDeliveryFee: true,
+              whatsappNumber: true,
+              location: true,
+            },
+          },
+          images: { orderBy: { displayOrder: 'asc' } },
+        },
+        take: 8,
+        orderBy: { createdAt: 'desc' },
+      }),
+    ]);
+    categories = c;
+    activeShops = s;
+    recentProducts = p;
+  } catch (error) {
+    console.warn('Prerender / database fetch fallback on HomePage:', error);
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">

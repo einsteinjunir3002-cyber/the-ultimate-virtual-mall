@@ -5,6 +5,8 @@ import { ProductCard } from '@/components/ProductCard';
 import { EmptyState } from '@/components/EmptyState';
 import { Package, Search, Filter, SlidersHorizontal } from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 export default async function ProductsCatalogPage(props: {
   searchParams: Promise<{
     q?: string;
@@ -22,47 +24,56 @@ export default async function ProductsCatalogPage(props: {
   if (sort === 'price-asc') orderBy = { price: 'asc' };
   if (sort === 'price-desc') orderBy = { price: 'desc' };
 
-  const [categories, products] = await Promise.all([
-    prisma.mallCategory.findMany({
-      where: { isActive: true },
-      orderBy: { displayOrder: 'asc' },
-    }),
-    prisma.product.findMany({
-      where: {
-        status: 'PUBLISHED',
-        isAvailable: true,
-        shop: {
-          status: 'ACTIVE',
-          ...(shopSlug ? { slug: shopSlug } : {}),
-        },
-        ...(categorySlug ? { mallCategory: { slug: categorySlug } } : {}),
-        ...(q
-          ? {
-              OR: [
-                { name: { contains: q, mode: 'insensitive' } },
-                { description: { contains: q, mode: 'insensitive' } },
-                { brand: { contains: q, mode: 'insensitive' } },
-              ],
-            }
-          : {}),
-      },
-      include: {
-        shop: {
-          select: {
-            id: true,
-            name: true,
-            slug: true,
-            baseDeliveryFee: true,
-            whatsappNumber: true,
-            location: true,
+  let categories: any[] = [];
+  let products: any[] = [];
+
+  try {
+    const [c, p] = await Promise.all([
+      prisma.mallCategory.findMany({
+        where: { isActive: true },
+        orderBy: { displayOrder: 'asc' },
+      }),
+      prisma.product.findMany({
+        where: {
+          status: 'PUBLISHED',
+          isAvailable: true,
+          shop: {
+            status: 'ACTIVE',
+            ...(shopSlug ? { slug: shopSlug } : {}),
           },
+          ...(categorySlug ? { mallCategory: { slug: categorySlug } } : {}),
+          ...(q
+            ? {
+                OR: [
+                  { name: { contains: q, mode: 'insensitive' } },
+                  { description: { contains: q, mode: 'insensitive' } },
+                  { brand: { contains: q, mode: 'insensitive' } },
+                ],
+              }
+            : {}),
         },
-        images: { orderBy: { displayOrder: 'asc' } },
-        variants: true,
-      },
-      orderBy,
-    }),
-  ]);
+        include: {
+          shop: {
+            select: {
+              id: true,
+              name: true,
+              slug: true,
+              baseDeliveryFee: true,
+              whatsappNumber: true,
+              location: true,
+            },
+          },
+          images: { orderBy: { displayOrder: 'asc' } },
+          variants: true,
+        },
+        orderBy,
+      }),
+    ]);
+    categories = c;
+    products = p;
+  } catch (error) {
+    console.warn('Prerender / database fetch fallback on ProductsCatalogPage:', error);
+  }
 
   const currentCategory = categories.find((c) => c.slug === categorySlug);
 

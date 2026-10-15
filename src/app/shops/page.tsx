@@ -5,6 +5,8 @@ import { EmptyState } from '@/components/EmptyState';
 import { Store, Search, Filter } from 'lucide-react';
 import Link from 'next/link';
 
+export const dynamic = 'force-dynamic';
+
 export default async function ShopsDirectoryPage(props: {
   searchParams: Promise<{ category?: string; search?: string }>;
 }) {
@@ -12,35 +14,44 @@ export default async function ShopsDirectoryPage(props: {
   const categoryFilter = searchParams.category;
   const searchQuery = searchParams.search;
 
-  const [categories, shops] = await Promise.all([
-    prisma.mallCategory.findMany({
-      where: { isActive: true },
-      orderBy: { displayOrder: 'asc' },
-    }),
-    prisma.shop.findMany({
-      where: {
-        status: 'ACTIVE',
-        ...(categoryFilter
-          ? { businessCategory: { contains: categoryFilter, mode: 'insensitive' } }
-          : {}),
-        ...(searchQuery
-          ? {
-              OR: [
-                { name: { contains: searchQuery, mode: 'insensitive' } },
-                { description: { contains: searchQuery, mode: 'insensitive' } },
-                { location: { contains: searchQuery, mode: 'insensitive' } },
-              ],
-            }
-          : {}),
-      },
-      include: {
-        _count: {
-          select: { products: { where: { status: 'PUBLISHED', isAvailable: true } } },
+  let categories: any[] = [];
+  let shops: any[] = [];
+
+  try {
+    const [c, s] = await Promise.all([
+      prisma.mallCategory.findMany({
+        where: { isActive: true },
+        orderBy: { displayOrder: 'asc' },
+      }),
+      prisma.shop.findMany({
+        where: {
+          status: 'ACTIVE',
+          ...(categoryFilter
+            ? { businessCategory: { contains: categoryFilter, mode: 'insensitive' } }
+            : {}),
+          ...(searchQuery
+            ? {
+                OR: [
+                  { name: { contains: searchQuery, mode: 'insensitive' } },
+                  { description: { contains: searchQuery, mode: 'insensitive' } },
+                  { location: { contains: searchQuery, mode: 'insensitive' } },
+                ],
+              }
+            : {}),
         },
-      },
-      orderBy: [{ isFeatured: 'desc' }, { rating: 'desc' }, { createdAt: 'desc' }],
-    }),
-  ]);
+        include: {
+          _count: {
+            select: { products: { where: { status: 'PUBLISHED', isAvailable: true } } },
+          },
+        },
+        orderBy: [{ isFeatured: 'desc' }, { rating: 'desc' }, { createdAt: 'desc' }],
+      }),
+    ]);
+    categories = c;
+    shops = s;
+  } catch (error) {
+    console.warn('Prerender / database fetch fallback on ShopsDirectoryPage:', error);
+  }
 
   return (
     <div className="min-h-screen bg-slate-50 py-12">
