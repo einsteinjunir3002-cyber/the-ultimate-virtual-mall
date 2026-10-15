@@ -596,9 +596,8 @@ async function syncToDatabase(prisma, isSupabase = false) {
     for (const p of shopData.products) {
       const productImgUrl = await downloadOrCacheImage(p.sourceImg, p.slug);
       const shopCatId = shopCatIdMap[p.categoryName] || null;
-
       const product = await prisma.product.upsert({
-        where: { id: `prod-${shopData.slug}-${p.slug}`.slice(0, 30) },
+        where: { shopId_slug: { shopId: shop.id, slug: p.slug } },
         update: {
           name: p.name,
           slug: p.slug,
@@ -613,7 +612,6 @@ async function syncToDatabase(prisma, isSupabase = false) {
           shopCategoryId: shopCatId,
         },
         create: {
-          id: `prod-${shopData.slug}-${p.slug}`.slice(0, 30),
           shopId: shop.id,
           mallCategoryId: mallCatId,
           shopCategoryId: shopCatId,
