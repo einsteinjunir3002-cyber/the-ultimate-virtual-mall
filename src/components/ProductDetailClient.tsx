@@ -569,6 +569,29 @@ export default function ProductDetailClient({
             </div>
           </div>
         )}
+
+        {/* Mobile Sticky Add to Bag Bar (Strictly mobile only: hidden on desktop) */}
+        <div className="sm:hidden fixed bottom-0 left-0 right-0 p-3 bg-white/95 backdrop-blur-md border-t border-slate-200/90 z-40 flex items-center justify-between gap-3 shadow-2xl">
+          <div className="flex flex-col min-w-[100px]">
+            <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Price</span>
+            <span className="text-base font-black text-slate-900 leading-tight truncate">
+              {formatGhs(currentPrice)}
+            </span>
+          </div>
+
+          <button
+            onClick={handleAddToCart}
+            disabled={isOutOfStock}
+            className={`flex-1 py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-md transition ${
+              isOutOfStock
+                ? 'bg-slate-200 text-slate-400 cursor-not-allowed'
+                : 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-600/30 active:scale-95'
+            }`}
+          >
+            <ShoppingCart className="w-4 h-4 shrink-0" />
+            <span className="truncate">{isOutOfStock ? 'Out of Stock' : 'Add to Bag'}</span>
+          </button>
+        </div>
       </div>
     </div>
   );

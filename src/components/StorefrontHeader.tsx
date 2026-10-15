@@ -153,13 +153,13 @@ export function StorefrontHeader({
             </div>
 
             {/* Contact / WhatsApp CTAs */}
-            <div className="flex items-center gap-2.5 self-start sm:self-end">
+            <div className="flex items-center gap-2.5 w-full sm:w-auto mt-2 sm:mt-0 self-start sm:self-end">
               {whatsAppLink && (
                 <a
                   href={whatsAppLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md shadow-emerald-600/20 flex items-center gap-2 transition"
+                  className="flex-1 sm:flex-initial justify-center px-4 py-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md shadow-emerald-600/20 flex items-center gap-2 transition text-center"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>Chat on WhatsApp</span>
@@ -168,7 +168,7 @@ export function StorefrontHeader({
 
               <a
                 href={`tel:${shop.phone}`}
-                className="px-4 py-2.5 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-bold text-xs shadow-sm flex items-center gap-2 transition"
+                className="flex-1 sm:flex-initial justify-center px-4 py-2.5 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-bold text-xs shadow-sm flex items-center gap-2 transition text-center"
               >
                 <Phone className="w-3.5 h-3.5 text-slate-500" />
                 <span>Call Store</span>
@@ -207,7 +207,7 @@ export function StorefrontHeader({
 
           {/* In-Shop Category Tabs */}
           {categories.length > 0 && (
-            <div className="mt-6 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+            <div className="mt-6 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
               <Link
                 href={`/shops/${shop.slug}`}
                 scroll={false}

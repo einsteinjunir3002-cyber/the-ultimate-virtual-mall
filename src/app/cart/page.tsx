@@ -107,10 +107,10 @@ export default function CartPage() {
                   {group.items.map((item) => (
                     <div
                       key={item.productId}
-                      className="flex items-center justify-between gap-4 py-3 border-b border-slate-100 last:border-b-0"
+                      className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 py-3 border-b border-slate-100 last:border-b-0"
                     >
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-16 h-16 rounded-2xl bg-slate-100 overflow-hidden shrink-0 border border-slate-100">
+                      <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-100 overflow-hidden shrink-0 border border-slate-100">
                           {item.imageUrl ? (
                             <img
                               src={item.imageUrl}
@@ -124,21 +124,21 @@ export default function CartPage() {
                           )}
                         </div>
 
-                        <div className="min-w-0">
-                          <h4 className="font-bold text-sm text-slate-900 truncate">{item.name}</h4>
+                        <div className="min-w-0 flex-1">
+                          <h4 className="font-bold text-xs sm:text-sm text-slate-900 truncate">{item.name}</h4>
                           {item.variantName && (
-                            <span className="text-[11px] font-semibold text-slate-500">
+                            <span className="text-[11px] font-semibold text-slate-500 block truncate">
                               Option: {item.variantName}
                             </span>
                           )}
-                          <p className="text-xs font-black text-indigo-600 mt-1">
+                          <p className="text-xs font-black text-indigo-600 mt-0.5">
                             {formatGhs(item.price)}
                           </p>
                         </div>
                       </div>
 
                       {/* Quantity & Subtotal */}
-                      <div className="flex items-center gap-5 shrink-0">
+                      <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-5 w-full sm:w-auto pt-1 sm:pt-0 border-t sm:border-t-0 border-slate-50">
                         <div className="flex items-center border border-slate-200 rounded-xl bg-slate-50">
                           <button
                             onClick={() => updateQuantity(item.productId, item.quantity - 1)}

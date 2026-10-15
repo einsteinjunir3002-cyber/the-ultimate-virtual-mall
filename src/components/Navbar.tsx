@@ -275,6 +275,70 @@ export function Navbar() {
                 Open a Shop / Merchant Onboarding
               </Link>
             </div>
+
+            {/* Mobile Account Section */}
+            {user ? (
+              <div className="pt-2 border-t border-slate-100 flex flex-col space-y-1 text-sm font-semibold">
+                <div className="px-3 py-1 text-[11px] text-slate-400 font-bold uppercase tracking-wider">
+                  Signed in as <span className="text-slate-700">{user.name}</span>
+                </div>
+                {user.role === 'SUPER_ADMIN' && (
+                  <Link
+                    href="/admin"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-3 py-2 rounded-xl text-rose-600 hover:bg-rose-50 flex items-center gap-2"
+                  >
+                    <ShieldCheck className="w-4 h-4 text-rose-500" />
+                    Super Admin Console
+                  </Link>
+                )}
+                {(user.role === 'MERCHANT' || user.role === 'SUPER_ADMIN') && (
+                  <Link
+                    href="/merchant/dashboard"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-3 py-2 rounded-xl text-indigo-600 hover:bg-indigo-50 flex items-center gap-2"
+                  >
+                    <Store className="w-4 h-4 text-indigo-500" />
+                    Merchant Dashboard
+                  </Link>
+                )}
+                <Link
+                  href="/account"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-3 py-2 rounded-xl text-slate-700 hover:bg-slate-100 flex items-center gap-2"
+                >
+                  <Package className="w-4 h-4 text-slate-500" />
+                  My Order History
+                </Link>
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    logout();
+                  }}
+                  className="w-full text-left px-3 py-2 rounded-xl text-rose-600 hover:bg-rose-50 flex items-center gap-2"
+                >
+                  <LogOut className="w-4 h-4 text-rose-500" />
+                  Sign Out
+                </button>
+              </div>
+            ) : (
+              <div className="pt-2 border-t border-slate-100 grid grid-cols-2 gap-2 text-center">
+                <Link
+                  href="/auth/login"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-3 py-2.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 transition"
+                >
+                  Sign In
+                </Link>
+                <Link
+                  href="/auth/register"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-3 py-2.5 rounded-xl bg-slate-900 text-xs font-bold text-white hover:bg-slate-800 shadow-sm transition"
+                >
+                  Create Account
+                </Link>
+              </div>
+            )}
           </div>
         )}
       </div>
