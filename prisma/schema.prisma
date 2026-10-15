@@ -1,0 +1,413 @@
+// Prisma schema for The Ultimate Virtual Mall
+// Multi-vendor e-commerce platform
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  CUSTOMER
+  MERCHANT
+  SUPER_ADMIN
+}
+
+enum ApplicationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  MORE_INFO_REQUESTED
+}
+
+enum ShopStatus {
+  ACTIVE
+  SUSPENDED
+  PENDING_REVIEW
+}
+
+enum TemplateStyle {
+  MODERN_MINIMAL
+  LUXURY_BOUTIQUE
+  MARKETPLACE_GRID
+  WARM_ARTISAN
+}
+
+enum ProductStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+  CANCELLED
+  REFUNDED
+}
+
+enum PaymentMethod {
+  PAYSTACK
+  CASH_ON_DELIVERY
+}
+
+enum FulfillmentStatus {
+  PENDING
+  CONFIRMED
+  PROCESSING
+  SHIPPED
+  READY_FOR_PICKUP
+  DELIVERED
+  CANCELLED
+}
+
+enum DeliveryMethod {
+  SELLER_DELIVERY
+  PICKUP
+  COURIER
+}
+
+enum SettlementStatus {
+  UNSETTLED
+  SETTLED
+  DISPUTED
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  passwordHash  String
+  role          Role      @default(CUSTOMER)
+  phone         String?
+  avatarUrl     String?
+  emailVerified DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  shops              Shop[]
+  sellerApplications SellerApplication[]
+  orders             ParentOrder[]
+  reviews            Review[]
+  auditLogs          AuditLog[]
+}
+
+model SellerApplication {
+  id                String            @id @default(cuid())
+  userId            String
+  user              User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  shopName          String
+  desiredSlug       String
+  category          String
+  description       String            @db.Text
+  phone             String
+  whatsappNumber    String?
+  location          String
+  businessRegNumber String?
+  nationalIdNumber  String?
+  proposedDelivery  String?
+  status            ApplicationStatus @default(PENDING)
+  adminNotes        String?           @db.Text
+  submittedAt       DateTime          @default(now())
+  reviewedAt        DateTime?
+
+  @@index([status])
+}
+
+model Shop {
+  id               String        @id @default(cuid())
+  ownerId          String
+  owner            User          @relation(fields: [ownerId], references: [id], onDelete: Restrict)
+  name             String
+  slug             String        @unique
+  tagline          String?
+  description      String?       @db.Text
+  logoUrl          String?
+  bannerUrl        String?
+  businessCategory String
+  location         String
+  phone            String
+  whatsappNumber   String?
+  email            String?
+  status           ShopStatus    @default(ACTIVE)
+  themeColor       String        @default("#0f172a")
+  templateStyle    TemplateStyle @default(MODERN_MINIMAL)
+  deliveryPolicy   String?       @db.Text
+  returnPolicy     String?       @db.Text
+  pickupAvailable  Boolean       @default(true)
+  baseDeliveryFee  Decimal       @default(0.00) @db.Decimal(10, 2)
+  rating           Decimal       @default(0.00) @db.Decimal(3, 2)
+  reviewCount      Int           @default(0)
+  isFeatured       Boolean       @default(false)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  shopCategories    ShopCategory[]
+  products          Product[]
+  sellerOrders      SellerOrder[]
+  reviews           Review[]
+  commissionRecords CommissionRecord[]
+
+  @@index([slug])
+  @@index([status])
+  @@index([businessCategory])
+}
+
+model MallCategory {
+  id           String    @id @default(cuid())
+  name         String
+  slug         String    @unique
+  description  String?
+  icon         String?
+  imageUrl     String?
+  displayOrder Int       @default(0)
+  isActive     Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+
+  products Product[]
+
+  @@index([slug])
+}
+
+model ShopCategory {
+  id           String   @id @default(cuid())
+  shopId       String
+  shop         Shop     @relation(fields: [shopId], references: [id], onDelete: Cascade)
+  name         String
+  slug         String
+  description  String?
+  displayOrder Int      @default(0)
+  isActive     Boolean  @default(true)
+
+  products Product[]
+
+  @@unique([shopId, slug])
+}
+
+model Product {
+  id                String        @id @default(cuid())
+  shopId            String
+  shop              Shop          @relation(fields: [shopId], references: [id], onDelete: Cascade)
+  mallCategoryId    String?
+  mallCategory      MallCategory? @relation(fields: [mallCategoryId], references: [id], onDelete: SetNull)
+  shopCategoryId    String?
+  shopCategory      ShopCategory? @relation(fields: [shopCategoryId], references: [id], onDelete: SetNull)
+  name              String
+  slug              String
+  description       String        @db.Text
+  price             Decimal       @db.Decimal(10, 2)
+  salePrice         Decimal?      @db.Decimal(10, 2)
+  sku               String?
+  stock             Int           @default(0)
+  lowStockThreshold Int           @default(5)
+  status            ProductStatus @default(PUBLISHED)
+  isAvailable       Boolean       @default(true)
+  brand             String?
+  attributes        Json?
+  seoTitle          String?
+  seoDescription    String?
+  viewCount         Int           @default(0)
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  images     ProductImage[]
+  variants   ProductVariant[]
+  orderItems OrderItem[]
+  reviews    Review[]
+
+  @@unique([shopId, slug])
+  @@index([status, isAvailable])
+  @@index([mallCategoryId])
+}
+
+model ProductImage {
+  id           String  @id @default(cuid())
+  productId    String
+  product      Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  url          String
+  altText      String?
+  displayOrder Int     @default(0)
+  isPrimary    Boolean @default(false)
+
+  @@index([productId])
+}
+
+model ProductVariant {
+  id         String   @id @default(cuid())
+  productId  String
+  product    Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  name       String
+  sku        String?
+  price      Decimal  @db.Decimal(10, 2)
+  salePrice  Decimal? @db.Decimal(10, 2)
+  stock      Int      @default(0)
+  attributes Json?
+
+  orderItems OrderItem[]
+
+  @@index([productId])
+}
+
+model ParentOrder {
+  id                 String        @id @default(cuid())
+  orderNumber        String        @unique
+  customerId         String?
+  customer           User?         @relation(fields: [customerId], references: [id], onDelete: SetNull)
+  guestEmail         String?
+  guestName          String?
+  guestPhone         String?
+  deliveryAddress    Json
+  itemsTotal         Decimal       @db.Decimal(10, 2)
+  deliveryTotal      Decimal       @db.Decimal(10, 2)
+  totalAmount        Decimal       @db.Decimal(10, 2)
+  currency           String        @default("GHS")
+  paymentStatus      PaymentStatus @default(PENDING)
+  paymentMethod      PaymentMethod @default(PAYSTACK)
+  paystackReference  String?       @unique
+  paystackAccessCode String?
+  paidAt             DateTime?
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+
+  sellerOrders        SellerOrder[]
+  paymentTransactions PaymentTransaction[]
+
+  @@index([customerId])
+  @@index([orderNumber])
+  @@index([paymentStatus])
+}
+
+model SellerOrder {
+  id                      String            @id @default(cuid())
+  parentOrderId           String
+  parentOrder             ParentOrder       @relation(fields: [parentOrderId], references: [id], onDelete: Cascade)
+  shopId                  String
+  shop                    Shop              @relation(fields: [shopId], references: [id], onDelete: Restrict)
+  subOrderNumber          String            @unique
+  itemsTotal              Decimal           @db.Decimal(10, 2)
+  deliveryFee             Decimal           @default(0.00) @db.Decimal(10, 2)
+  platformCommissionRate  Decimal           @db.Decimal(5, 2)
+  platformCommissionAmount Decimal          @db.Decimal(10, 2)
+  sellerEarnings          Decimal           @db.Decimal(10, 2)
+  status                  FulfillmentStatus @default(PENDING)
+  deliveryMethod          DeliveryMethod    @default(SELLER_DELIVERY)
+  trackingNumber          String?
+  courierName             String?
+  sellerNotes             String?
+  createdAt               DateTime          @default(now())
+  updatedAt               DateTime          @updatedAt
+
+  items            OrderItem[]
+  commissionRecord CommissionRecord?
+
+  @@index([parentOrderId])
+  @@index([shopId])
+  @@index([status])
+}
+
+model OrderItem {
+  id            String          @id @default(cuid())
+  sellerOrderId String
+  sellerOrder   SellerOrder     @relation(fields: [sellerOrderId], references: [id], onDelete: Cascade)
+  productId     String
+  product       Product         @relation(fields: [productId], references: [id], onDelete: Restrict)
+  variantId     String?
+  variant       ProductVariant? @relation(fields: [variantId], references: [id], onDelete: SetNull)
+  productName   String
+  variantName   String?
+  unitPrice     Decimal         @db.Decimal(10, 2)
+  quantity      Int
+  subtotal      Decimal         @db.Decimal(10, 2)
+  productImage  String?
+
+  @@index([sellerOrderId])
+}
+
+model PaymentTransaction {
+  id              String      @id @default(cuid())
+  parentOrderId   String
+  parentOrder     ParentOrder @relation(fields: [parentOrderId], references: [id], onDelete: Cascade)
+  provider        String      @default("PAYSTACK")
+  reference       String      @unique
+  amount          Decimal     @db.Decimal(10, 2)
+  currency        String      @default("GHS")
+  channel         String?
+  status          String
+  gatewayResponse String?
+  paidAt          DateTime?
+  rawResponse     Json?
+  createdAt       DateTime    @default(now())
+
+  @@index([parentOrderId])
+  @@index([reference])
+}
+
+model CommissionRecord {
+  id                   String           @id @default(cuid())
+  sellerOrderId        String           @unique
+  sellerOrder          SellerOrder      @relation(fields: [sellerOrderId], references: [id], onDelete: Cascade)
+  shopId               String
+  shop                 Shop             @relation(fields: [shopId], references: [id], onDelete: Restrict)
+  grossAmount          Decimal          @db.Decimal(10, 2)
+  commissionPercentage Decimal          @db.Decimal(5, 2)
+  commissionAmount     Decimal          @db.Decimal(10, 2)
+  netSellerAmount      Decimal          @db.Decimal(10, 2)
+  settlementStatus     SettlementStatus @default(UNSETTLED)
+  settledAt            DateTime?
+  settlementNotes      String?
+  createdAt            DateTime         @default(now())
+
+  @@index([shopId])
+  @@index([settlementStatus])
+}
+
+model Review {
+  id                 String   @id @default(cuid())
+  productId          String
+  product            Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  shopId             String
+  shop               Shop     @relation(fields: [shopId], references: [id], onDelete: Cascade)
+  customerId         String
+  customer           User     @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  rating             Int
+  comment            String   @db.Text
+  isVerifiedPurchase Boolean  @default(true)
+  createdAt          DateTime @default(now())
+
+  @@index([productId])
+  @@index([shopId])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  userRole  String?
+  action    String
+  entity    String
+  entityId  String?
+  details   Json?
+  ipAddress String?
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([action])
+}
+
+model PlatformConfig {
+  id                       String   @id @default("default")
+  mallName                 String   @default("The Ultimate Virtual Mall")
+  mallTagline              String   @default("Ghana's Premier Digital Shopping Destination")
+  contactEmail             String   @default("support@theultimatemall.com")
+  contactPhone             String   @default("+233 24 000 0000")
+  whatsappSupport          String   @default("+233240000000")
+  defaultCommissionPercent Decimal  @default(5.00) @db.Decimal(5, 2)
+  currency                 String   @default("GHS")
+  currencySymbol           String   @default("GH₵")
+  maintenanceMode          Boolean  @default(false)
+  updatedAt                DateTime @updatedAt
+}
