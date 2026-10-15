@@ -2,23 +2,34 @@ import { MetadataRoute } from 'next';
 import { prisma } from '@/lib/prisma';
 import { ProductStatus, ShopStatus } from '@prisma/client';
 
+export const dynamic = 'force-dynamic';
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 
-  const [shops, products] = await Promise.all([
-    prisma.shop.findMany({
-      where: { status: ShopStatus.ACTIVE },
-      select: { slug: true, updatedAt: true },
-    }),
-    prisma.product.findMany({
-      where: {
-        status: ProductStatus.PUBLISHED,
-        isAvailable: true,
-        shop: { status: ShopStatus.ACTIVE },
-      },
-      select: { slug: true, updatedAt: true },
-    }),
-  ]);
+  let shops: any[] = [];
+  let products: any[] = [];
+
+  try {
+    const [s, p] = await Promise.all([
+      prisma.shop.findMany({
+        where: { status: ShopStatus.ACTIVE },
+        select: { slug: true, updatedAt: true },
+      }),
+      prisma.product.findMany({
+        where: {
+          status: ProductStatus.PUBLISHED,
+          isAvailable: true,
+          shop: { status: ShopStatus.ACTIVE },
+        },
+        select: { slug: true, updatedAt: true },
+      }),
+    ]);
+    shops = s;
+    products = p;
+  } catch (err) {
+    console.warn('Prisma fetch failed in sitemap, falling back to static pages:', err);
+  }
 
   const staticPages: MetadataRoute.Sitemap = [
     {
