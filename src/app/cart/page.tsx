@@ -51,11 +51,11 @@ export default function CartPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between mb-8">
+    <div className="min-h-screen bg-slate-50 py-6 sm:py-12">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between mb-6 sm:mb-8">
           <div>
-            <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">Shopping Cart</h1>
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Shopping Cart</h1>
             <p className="text-xs text-slate-500 mt-1">
               {totalItemCount} {totalItemCount === 1 ? 'item' : 'items'} from {groupedByShop.length}{' '}
               independent {groupedByShop.length === 1 ? 'merchant' : 'merchants'}
@@ -70,17 +70,17 @@ export default function CartPage() {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
           {/* Items by Merchant (Left 8 Cols) */}
-          <div className="lg:col-span-8 space-y-6">
+          <div className="lg:col-span-8 space-y-4 sm:space-y-6">
             {groupedByShop.map((group) => (
               <div
                 key={group.shopId}
-                className="rounded-3xl bg-white border border-slate-200/90 p-6 shadow-sm"
+                className="rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 p-3.5 sm:p-6 shadow-sm"
               >
                 {/* Shop Banner Header */}
-                <div className="flex items-center justify-between pb-4 mb-5 border-b border-slate-100 flex-wrap gap-2">
-                  <div className="flex items-center gap-2.5">
+                <div className="flex items-center justify-between pb-3 sm:pb-4 mb-4 sm:mb-5 border-b border-slate-100 flex-wrap gap-2">
+                  <div className="flex items-center gap-2 sm:gap-2.5">
                     <div className="w-8 h-8 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-xs">
                       <Store className="w-4 h-4" />
                     </div>
@@ -95,7 +95,7 @@ export default function CartPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-1.5 text-xs text-slate-500 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-100">
+                  <div className="flex items-center gap-1.5 text-xs text-slate-500 bg-slate-50 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl border border-slate-100">
                     <Truck className="w-3.5 h-3.5 text-indigo-500" />
                     <span>Shop Delivery: </span>
                     <span className="font-extrabold text-slate-900">{formatGhs(group.deliveryFee)}</span>
@@ -103,14 +103,14 @@ export default function CartPage() {
                 </div>
 
                 {/* Items in this Shop */}
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {group.items.map((item) => (
                     <div
                       key={item.productId}
                       className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 py-3 border-b border-slate-100 last:border-b-0"
                     >
                       <div className="flex items-center gap-3 sm:gap-4 min-w-0">
-                        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-100 overflow-hidden shrink-0 border border-slate-100">
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-slate-100 overflow-hidden shrink-0 border border-slate-100">
                           {item.imageUrl ? (
                             <img
                               src={item.imageUrl}

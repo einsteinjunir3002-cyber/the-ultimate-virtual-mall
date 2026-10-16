@@ -58,24 +58,24 @@ export default async function ShopsDirectoryPage(props: {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-slate-50 py-8 sm:py-12">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-10 text-center max-w-2xl mx-auto">
+        <div className="mb-8 sm:mb-10 text-center max-w-2xl mx-auto">
           <div className="w-12 h-12 mx-auto mb-4 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold">
             <Store className="w-6 h-6" />
           </div>
-          <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight mb-3">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2 sm:mb-3">
             Mall Shops Directory
           </h1>
-          <p className="text-slate-600 text-sm leading-relaxed">
+          <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
             Explore independent shops, boutiques, and merchants operating within The Ultimate Virtual Mall.
             Each merchant manages their own curated storefront, prices, and delivery settings.
           </p>
         </div>
 
         {/* Search & Filter Bar */}
-        <div className="mb-8 p-4 rounded-3xl bg-white border border-slate-200/90 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mb-6 sm:mb-8 p-3 sm:p-4 rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
           <form method="GET" className="relative w-full md:w-96">
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
             <input
@@ -94,7 +94,7 @@ export default async function ShopsDirectoryPage(props: {
           </form>
 
           {/* Category Filter Pills */}
-          <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-1 scrollbar-none">
+          <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-1 scrollbar-none scroll-touch -mx-3 px-3 sm:mx-0 sm:px-0">
             <Link
               href="/shops"
               className={`px-3.5 py-1.5 rounded-xl text-xs font-bold shrink-0 transition ${
@@ -139,7 +139,7 @@ export default async function ShopsDirectoryPage(props: {
             actionHref="/merchant/onboard"
           />
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6">
             {shops.map((shop) => (
               <ShopCard key={shop.id} shop={shop} />
             ))}

@@ -30,6 +30,58 @@ body {
   color: var(--foreground);
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Eliminate iOS Safari mobile auto-zoom on inputs */
+@media screen and (max-width: 767px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* ============================
+   MOBILE & TOUCH UTILITIES (LIKEM PERFUMERY SPEC)
+   ============================ */
+
+/* Hide scrollbar (cross-browser) */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth momentum scrolling on iOS */
+.scroll-touch {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Minimum tap target size for mobile */
+.tap-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Ensure touch events work well on buttons */
+a,
+button {
+  touch-action: manipulation;
+}
+
+/* xs breakpoint helper classes (< 400px vs >= 400px wide) */
+@media (min-width: 400px) {
+  .xs\:flex-row { flex-direction: row !important; }
+  .xs\:w-auto { width: auto !important; }
+  .xs\:inline { display: inline !important; }
 }
 
 /* Custom Glassmorphism */

@@ -184,10 +184,10 @@ export default function ProductDetailClient({
     : null;
 
   return (
-    <div className="min-h-screen bg-slate-50 py-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-slate-50 py-6 sm:py-10 pb-24 sm:pb-10">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-xs text-slate-500 mb-8 flex-wrap">
+        <nav className="flex items-center gap-2 text-xs text-slate-500 mb-4 sm:mb-8 flex-wrap">
           <Link href="/" className="hover:text-indigo-600 transition">
             Mall Home
           </Link>
@@ -206,10 +206,10 @@ export default function ProductDetailClient({
         </nav>
 
         {/* Main Product Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-sm mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-10 border border-slate-200/90 shadow-sm mb-8 sm:mb-12">
           {/* Images Section */}
-          <div className="lg:col-span-6 flex flex-col gap-4">
-            <div className="relative aspect-square w-full rounded-3xl bg-slate-100 overflow-hidden border border-slate-100">
+          <div className="lg:col-span-6 flex flex-col gap-3 sm:gap-4">
+            <div className="relative aspect-[4/5] sm:aspect-square w-full rounded-2xl sm:rounded-3xl bg-slate-100 overflow-hidden border border-slate-100">
               {primaryImage ? (
                 <img
                   src={primaryImage}
@@ -546,23 +546,23 @@ export default function ProductDetailClient({
         {/* Related Products */}
         {relatedProducts.length > 0 && (
           <div>
-            <h3 className="text-xl font-extrabold text-slate-900 tracking-tight mb-6">
+            <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight mb-4 sm:mb-6">
               More From This Store or Category
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
               {relatedProducts.map((rel: any) => (
                 <div
                   key={rel.id}
-                  className="rounded-2xl border border-slate-200 bg-white p-4 hover:shadow-md transition"
+                  className="rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-2.5 sm:p-4 hover:shadow-md transition"
                 >
                   <Link href={`/products/${rel.slug}`}>
-                    <div className="aspect-square rounded-xl bg-slate-100 overflow-hidden mb-3">
+                    <div className="aspect-[4/5] sm:aspect-square rounded-lg sm:rounded-xl bg-slate-100 overflow-hidden mb-2 sm:mb-3">
                       {rel.images?.[0]?.url && (
                         <img src={rel.images[0].url} alt="" className="w-full h-full object-cover" />
                       )}
                     </div>
                     <h5 className="font-bold text-xs text-slate-900 truncate">{rel.name}</h5>
-                    <p className="text-xs font-black text-indigo-600 mt-1">{formatGhs(rel.price)}</p>
+                    <p className="text-xs font-black text-indigo-600 mt-0.5 sm:mt-1">{formatGhs(rel.price)}</p>
                   </Link>
                 </div>
               ))}

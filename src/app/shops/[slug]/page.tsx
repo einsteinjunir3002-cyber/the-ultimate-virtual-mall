@@ -107,8 +107,8 @@ export default async function ShopStorefrontPage(props: {
       />
 
       {/* Main Storefront Catalogue */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
-        <div className="flex items-center justify-between mb-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 mt-6 sm:mt-10">
+        <div className="flex items-center justify-between mb-4 sm:mb-8">
           <div>
             <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
               {categorySlug && categorySlug !== 'all'
@@ -122,11 +122,11 @@ export default async function ShopStorefrontPage(props: {
         </div>
 
         {shop.products.length === 0 ? (
-          <div className="text-center py-16 px-6 max-w-xl mx-auto rounded-3xl bg-white border border-slate-200/90 shadow-sm">
+          <div className="text-center py-12 sm:py-16 px-4 sm:px-6 max-w-xl mx-auto rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 shadow-sm">
             <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
               <Package className="w-7 h-7" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-2">
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
               {categorySlug && categorySlug !== 'all'
                 ? 'No Products In This Category'
                 : 'Catalogue In Preparation'}
@@ -163,7 +163,7 @@ export default async function ShopStorefrontPage(props: {
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
             {shop.products.map((product: any) => (
               <ProductCard key={product.id} product={product as any} />
             ))}

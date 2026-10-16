@@ -124,9 +124,9 @@ export default async function HomePage() {
       </section>
 
       {/* Categories Horizontal Carousel */}
-      <section className="border-b border-slate-200/80 bg-white py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-4">
+      <section className="border-b border-slate-200/80 bg-white py-4 sm:py-6">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-3 sm:mb-4">
             <h2 className="text-xs font-extrabold uppercase tracking-widest text-slate-500">
               Mall Global Categories
             </h2>
@@ -135,12 +135,12 @@ export default async function HomePage() {
             </Link>
           </div>
 
-          <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-none">
+          <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-2 scrollbar-none scroll-touch -mx-3 px-3 sm:mx-0 sm:px-0">
             {categories.map((cat) => (
               <Link
                 key={cat.id}
                 href={`/products?category=${cat.slug}`}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-2xl border border-slate-200/90 bg-slate-50/80 hover:bg-indigo-50/60 hover:border-indigo-200 hover:text-indigo-600 shrink-0 text-xs font-bold text-slate-700 transition"
+                className="flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl border border-slate-200/90 bg-slate-50/80 hover:bg-indigo-50/60 hover:border-indigo-200 hover:text-indigo-600 shrink-0 text-xs font-bold text-slate-700 transition"
               >
                 <Building2 className="w-3.5 h-3.5 text-indigo-500" />
                 <span>{cat.name}</span>
@@ -151,10 +151,10 @@ export default async function HomePage() {
       </section>
 
       {/* Main Mall Content */}
-      <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1">
+      <section className="py-8 sm:py-16 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex-1">
         {/* Featured / Active Shops Section */}
-        <div className="mb-16">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div className="mb-12 sm:mb-16">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-4 mb-6 sm:mb-8">
             <div>
               <span className="text-xs font-extrabold uppercase tracking-widest text-indigo-600 mb-1 block">
                 Independent Storefronts
@@ -183,7 +183,7 @@ export default async function HomePage() {
               actionHref="/merchant/onboard"
             />
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6">
               {activeShops.map((shop) => (
                 <ShopCard key={shop.id} shop={shop} />
               ))}
@@ -193,7 +193,7 @@ export default async function HomePage() {
 
         {/* Recently Added Products Section */}
         <div>
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-4 mb-6 sm:mb-8">
             <div>
               <span className="text-xs font-extrabold uppercase tracking-widest text-indigo-600 mb-1 block">
                 Mall Catalogue
@@ -222,7 +222,7 @@ export default async function HomePage() {
               actionHref="/auth/login"
             />
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
               {recentProducts.map((product) => (
                 <ProductCard key={product.id} product={product as any} />
               ))}
@@ -232,9 +232,9 @@ export default async function HomePage() {
       </section>
 
       {/* Become a Merchant Spotlight Banner */}
-      <section className="bg-slate-900 text-white py-16 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl bg-gradient-to-tr from-slate-900 via-indigo-950 to-slate-900 border border-indigo-500/30 p-8 sm:p-12 relative overflow-hidden shadow-2xl">
+      <section className="bg-slate-900 text-white py-12 sm:py-16 border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="rounded-2xl sm:rounded-3xl bg-gradient-to-tr from-slate-900 via-indigo-950 to-slate-900 border border-indigo-500/30 p-5 sm:p-12 relative overflow-hidden shadow-2xl">
             <div className="max-w-2xl">
               <span className="px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-extrabold uppercase tracking-wider inline-block mb-4">
                 Merchant Opportunity

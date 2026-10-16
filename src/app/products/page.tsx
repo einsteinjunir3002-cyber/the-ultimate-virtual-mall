@@ -85,11 +85,11 @@ export default async function ProductsCatalogPage(props: {
   const currentCategory = categories.find((c) => c.slug === categorySlug);
 
   return (
-    <div className="min-h-screen bg-slate-50 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-slate-50 py-6 sm:py-12">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         {/* Page Title */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">
+        <div className="mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
             {currentCategory ? currentCategory.name : 'Mall Product Catalogue'}
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
@@ -99,7 +99,7 @@ export default async function ProductsCatalogPage(props: {
         </div>
 
         {/* Filter and Search Controls */}
-        <div className="mb-8 p-4 rounded-3xl bg-white border border-slate-200/90 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mb-6 p-3 sm:p-4 rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
           <form method="GET" className="relative w-full md:w-96">
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
             <input
@@ -169,7 +169,7 @@ export default async function ProductsCatalogPage(props: {
         </div>
 
         {/* Categories Bar */}
-        <div className="mb-8 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+        <div className="mb-6 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none scroll-touch -mx-3 px-3 sm:mx-0 sm:px-0">
           <Link
             href="/products"
             className={`px-3.5 py-1.5 rounded-xl text-xs font-bold shrink-0 transition ${
@@ -209,7 +209,7 @@ export default async function ProductsCatalogPage(props: {
             actionHref="/shops"
           />
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
             {products.map((product) => (
               <ProductCard key={product.id} product={product as any} />
             ))}

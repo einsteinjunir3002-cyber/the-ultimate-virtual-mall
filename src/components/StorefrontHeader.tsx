@@ -98,17 +98,17 @@ export function StorefrontHeader({
       </div>
 
       {/* Shop Profile Header Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative -mt-16 sm:-mt-20 pb-6 border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="relative -mt-12 sm:-mt-20 pb-6 border-b border-slate-200">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5">
             {/* Logo and Shop Name */}
-            <div className="flex items-end gap-4">
-              <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-3xl bg-white p-1.5 border-4 border-white shadow-xl overflow-hidden shrink-0">
+            <div className="flex items-end gap-3 sm:gap-4">
+              <div className="w-20 h-20 sm:w-32 sm:h-32 rounded-2xl sm:rounded-3xl bg-white p-1.5 border-4 border-white shadow-xl overflow-hidden shrink-0">
                 {shop.logoUrl ? (
                   <img
                     src={shop.logoUrl}
                     alt={shop.name}
-                    className="w-full h-full object-cover rounded-2xl"
+                    className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
                   />
                 ) : (
                   <div
@@ -207,7 +207,7 @@ export function StorefrontHeader({
 
           {/* In-Shop Category Tabs */}
           {categories.length > 0 && (
-            <div className="mt-6 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="mt-4 sm:mt-6 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none scroll-touch -mx-3 px-3 sm:mx-0 sm:px-0">
               <Link
                 href={`/shops/${shop.slug}`}
                 scroll={false}
