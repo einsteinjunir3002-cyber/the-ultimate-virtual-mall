@@ -1,0 +1,1652 @@
+[
+  {
+    "name": "Accra Gadget Hub (Test)",
+    "slug": "accra-gadget-hub-test",
+    "categories": [
+      {
+        "name": "Smartphones",
+        "slug": "smartphones",
+        "products": [
+          {
+            "id": "cmv9rb59c0010jhosvtxgn6ad",
+            "name": "iPhone 5s",
+            "slug": "iphone-5s",
+            "price": "3000",
+            "description": "The iPhone 5s is a classic smartphone known for its compact design and advanced features during its release. While it's an older model, it still provides a reliable user experience.",
+            "imageUrl": "/uploads/img-1792081927736-x9lg4x.webp"
+          },
+          {
+            "id": "cmv9rb5bn0017jhosgv7g2gw4",
+            "name": "iPhone 6",
+            "slug": "iphone-6",
+            "price": "4500",
+            "description": "The iPhone 6 is a stylish and capable smartphone with a larger display and improved performance. It introduced new features and design elements, making it a popular choice in its time.",
+            "imageUrl": "/uploads/img-1792081927812-3m9f6k.webp"
+          },
+          {
+            "id": "cmv9rb5d7001ejhoss2ofw0o0",
+            "name": "iPhone 13 Pro",
+            "slug": "iphone-13-pro",
+            "price": "16500",
+            "description": "The iPhone 13 Pro is a cutting-edge smartphone with a powerful camera system, high-performance chip, and stunning display. It offers advanced features for users who demand top-notch technology.",
+            "imageUrl": "/uploads/img-1792081927876-1xeqih.webp"
+          },
+          {
+            "id": "cmva6xb4j000cjhyw9z4i0hvx",
+            "name": "Apple iPhone 15 Pro Max 256GB",
+            "slug": "iphone-15-pro-max-256gb",
+            "price": "16500",
+            "description": "Authentic Apple iPhone 15 Pro Max 256GB. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1695048133142-1a20484d2569.webp"
+          },
+          {
+            "id": "cmva6xbgy000kjhywy0qf69tx",
+            "name": "Samsung Galaxy S24 Ultra 512GB",
+            "slug": "samsung-galaxy-s24-ultra-512gb",
+            "price": "15200",
+            "description": "Authentic Samsung Galaxy S24 Ultra 512GB. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1610945265064-0e34e5519bbf.webp"
+          },
+          {
+            "id": "cmva6xbs3000sjhyw9qxob5ha",
+            "name": "Apple iPhone 14 Pro 128GB",
+            "slug": "iphone-14-pro-128gb-deep-purple",
+            "price": "11900",
+            "description": "Authentic Apple iPhone 14 Pro 128GB. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1663499482523-1c0c1bae4ce1.webp"
+          },
+          {
+            "id": "cmva6xc8n0010jhywc168vvh3",
+            "name": "Google Pixel 8 Pro 256GB",
+            "slug": "google-pixel-8-pro-256gb-obsidian",
+            "price": "10800",
+            "description": "Authentic Google Pixel 8 Pro 256GB. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1598327105666-5b89351aff97.webp"
+          },
+          {
+            "id": "cmva6xdeu0018jhywzjve1ujb",
+            "name": "Apple iPhone 13 Pro 128GB",
+            "slug": "iphone-13-pro-sierra-blue",
+            "price": "8900",
+            "description": "Authentic Apple iPhone 13 Pro 128GB. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1511707171634-5f897ff02560.webp"
+          },
+          {
+            "id": "cmva6xdmq001gjhywk4bts0xf",
+            "name": "Samsung Galaxy Z Fold 5 256GB",
+            "slug": "samsung-galaxy-z-fold-5-phantom-black",
+            "price": "18500",
+            "description": "Authentic Samsung Galaxy Z Fold 5 256GB. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1580910051074-3eb694886505.webp"
+          }
+        ]
+      },
+      {
+        "name": "Laptops",
+        "slug": "laptops",
+        "products": [
+          {
+            "id": "cmv9rb5es001ljhosdfim61i3",
+            "name": "Apple MacBook Pro 14 Inch Space Grey",
+            "slug": "apple-macbook-pro-14-inch-space-grey",
+            "price": "30000",
+            "description": "The MacBook Pro 14 Inch in Space Grey is a powerful and sleek laptop, featuring Apple's M1 Pro chip for exceptional performance and a stunning Retina display.",
+            "imageUrl": "/uploads/img-1792081927931-tqdz7z.webp"
+          },
+          {
+            "id": "cmv9rb5gm001sjhos4u2gf8lc",
+            "name": "Asus Zenbook Pro Dual Screen Laptop",
+            "slug": "asus-zenbook-pro-dual-screen-laptop",
+            "price": "27000",
+            "description": "The Asus Zenbook Pro Dual Screen Laptop is a high-performance device with dual screens, providing productivity and versatility for creative professionals.",
+            "imageUrl": "/uploads/img-1792081927992-yutqrs.webp"
+          },
+          {
+            "id": "cmv9rb5i7001zjhos6d2fj43n",
+            "name": "Huawei Matebook X Pro",
+            "slug": "huawei-matebook-x-pro",
+            "price": "21000",
+            "description": "The Huawei Matebook X Pro is a slim and stylish laptop with a high-resolution touchscreen display, offering a premium experience for users on the go.",
+            "imageUrl": "/uploads/img-1792081928055-aspkpe.webp"
+          },
+          {
+            "id": "cmva6xdul001ojhywkpkebpxs",
+            "name": "Apple MacBook Pro 14\" M3 Pro",
+            "slug": "macbook-pro-14-m3-pro-space-black",
+            "price": "24900",
+            "description": "Authentic Apple MacBook Pro 14\" M3 Pro. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1517336714731-489689fd1ca8.webp"
+          },
+          {
+            "id": "cmva6xe1q001wjhywlscw46to",
+            "name": "Dell XPS 15 9530 Core i9 32GB",
+            "slug": "dell-xps-15-9530-platinum-silver",
+            "price": "21500",
+            "description": "Authentic Dell XPS 15 9530 Core i9 32GB. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1593642632823-8f785ba67e45.webp"
+          },
+          {
+            "id": "cmva6xe3w0022jhywko3fh48w",
+            "name": "Apple MacBook Air 15\" M2 16GB",
+            "slug": "macbook-air-15-m2-midnight",
+            "price": "16800",
+            "description": "Authentic Apple MacBook Air 15\" M2 16GB. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1611186871348-b1ce696e52c9.webp"
+          },
+          {
+            "id": "cmva6xe79002ajhywdfv10497",
+            "name": "HP Spectre x360 14\" 2-in-1",
+            "slug": "hp-spectre-x360-14-nightfall-black",
+            "price": "17200",
+            "description": "Authentic HP Spectre x360 14\" 2-in-1. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1544716278-ca5e3f4abd8c.webp"
+          },
+          {
+            "id": "cmva6xeaf002gjhyw3uz8r9j3",
+            "name": "Lenovo ThinkPad X1 Carbon Gen 11",
+            "slug": "lenovo-thinkpad-x1-carbon-gen-11",
+            "price": "19500",
+            "description": "Authentic Lenovo ThinkPad X1 Carbon Gen 11. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1588872657578-7efd1f1555ed.webp"
+          },
+          {
+            "id": "cmva6xejn002mjhywdwkb0ro4",
+            "name": "Asus Zenbook Duo OLED Dual Screen",
+            "slug": "asus-zenbook-duo-oled-dual-screen",
+            "price": "22800",
+            "description": "Authentic Asus Zenbook Duo OLED Dual Screen. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1525547719571-a2d4ac8945e2.webp"
+          }
+        ]
+      },
+      {
+        "name": "Tablets",
+        "slug": "tablets",
+        "products": [
+          {
+            "id": "cmv9rb5pm002pjhosfdxxz8d4",
+            "name": "Samsung Galaxy Tab S8 Plus Grey",
+            "slug": "samsung-galaxy-tab-s8-plus-grey",
+            "price": "9000",
+            "description": "The Samsung Galaxy Tab S8 Plus in Grey is a high-performance Android tablet by Samsung. With a large AMOLED display, powerful processor, and S Pen support, it's ideal for productivity and entertainment.",
+            "imageUrl": "/uploads/img-1792081928312-rcd6ig.webp"
+          },
+          {
+            "id": "cmv9rb5re002wjhosoxummc1u",
+            "name": "Samsung Galaxy Tab White",
+            "slug": "samsung-galaxy-tab-white",
+            "price": "5250",
+            "description": "The Samsung Galaxy Tab in White is a sleek and versatile Android tablet. With a vibrant display, long-lasting battery, and a range of features, it offers a great user experience for various tasks.",
+            "imageUrl": "/uploads/img-1792081928380-5qi1rx.webp"
+          },
+          {
+            "id": "cmv9rb5nr002ijhos41qkwtfx",
+            "name": "iPad Mini 2021 Starlight",
+            "slug": "ipad-mini-2021-starlight",
+            "price": "7500",
+            "description": "The iPad Mini 2021 in Starlight is a compact and powerful tablet from Apple. Featuring a stunning Retina display, powerful A-series chip, and a sleek design, it offers a premium tablet experience.",
+            "imageUrl": "/uploads/img-1792081928254-sb9ooq.webp"
+          },
+          {
+            "id": "cmva6xept002sjhywmd11ihrc",
+            "name": "Apple iPad Pro 12.9\" M2 256GB WiFi",
+            "slug": "ipad-pro-12-9-m2-space-gray",
+            "price": "15500",
+            "description": "Authentic Apple iPad Pro 12.9\" M2 256GB WiFi. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1544244015-0df4b3ffc6b0.webp"
+          },
+          {
+            "id": "cmva6xevm0030jhyw0vjrr735",
+            "name": "Apple iPad Air 5th Gen 64GB",
+            "slug": "ipad-air-5th-gen-blue-starlight",
+            "price": "7900",
+            "description": "Authentic Apple iPad Air 5th Gen 64GB. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1561154464-82e9adf32764.webp"
+          },
+          {
+            "id": "cmva6xf1y003ejhywp7aae0pk",
+            "name": "Apple iPad Mini (2021) 64GB",
+            "slug": "ipad-mini-2021-starlight-space-gray",
+            "price": "6400",
+            "description": "Authentic Apple iPad Mini (2021) 64GB. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1541807084-5c52b6b3adef.webp"
+          },
+          {
+            "id": "cmva6xf6i003mjhywz99h859v",
+            "name": "Samsung Galaxy Tab S8 Plus 128GB",
+            "slug": "samsung-galaxy-tab-s8-plus-128gb",
+            "price": "8800",
+            "description": "Authentic Samsung Galaxy Tab S8 Plus 128GB. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1589739900243-4b52cd9b104e.webp"
+          },
+          {
+            "id": "cmva6xfbq003sjhywy33zxgx6",
+            "name": "Lenovo Tab P12 Pro 256GB with Pen",
+            "slug": "lenovo-tab-p12-pro-storm-grey",
+            "price": "7200",
+            "description": "Authentic Lenovo Tab P12 Pro 256GB with Pen. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1542751371-adc38448a05e.webp"
+          },
+          {
+            "id": "cmva6xeyx0038jhywo4pmc54e",
+            "name": "Samsung Galaxy Tab S9 Ultra 5G",
+            "slug": "samsung-galaxy-tab-s9-ultra-5g",
+            "price": "16200",
+            "description": "Authentic Samsung Galaxy Tab S9 Ultra 5G. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1585790050230-5dd28404ccb9.webp"
+          }
+        ]
+      },
+      {
+        "name": "Audio & Accessories",
+        "slug": "audio-accessories",
+        "products": [
+          {
+            "id": "cmv9rb5jm0026jhosjjtgwy09",
+            "name": "Amazon Echo Plus",
+            "slug": "amazon-echo-plus",
+            "price": "1500",
+            "description": "The Amazon Echo Plus is a smart speaker with built-in Alexa voice control. It features premium sound quality and serves as a hub for controlling smart home devices.",
+            "imageUrl": "/uploads/img-1792081928115-mlw1rt.webp"
+          },
+          {
+            "id": "cmv9rb5l8002ajhos189rgon1",
+            "name": "Apple Airpods",
+            "slug": "apple-airpods",
+            "price": "1950",
+            "description": "The Apple Airpods offer a seamless wireless audio experience. With easy pairing, high-quality sound, and Siri integration, they are perfect for on-the-go listening.",
+            "imageUrl": "/uploads/img-1792081928162-ga8j5j.webp"
+          },
+          {
+            "id": "cmv9rb5m6002fjhos60psyan9",
+            "name": "Apple AirPods Max Silver",
+            "slug": "apple-airpods-max-silver",
+            "price": "8250",
+            "description": "The Apple AirPods Max in Silver are premium over-ear headphones with high-fidelity audio, adaptive EQ, and active noise cancellation. Experience immersive sound in style.",
+            "imageUrl": "/uploads/img-1792081928222-nt9o04.webp"
+          },
+          {
+            "id": "cmva6xffh003yjhywj7p0chcy",
+            "name": "Sony WH-1000XM5 Wireless Headphones",
+            "slug": "sony-wh-1000xm5-noise-canceling-black",
+            "price": "4200",
+            "description": "Authentic Sony WH-1000XM5 Wireless Headphones. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1505740420928-5e560c06d30e.webp"
+          },
+          {
+            "id": "cmva6xfkf0046jhywa9b87ngo",
+            "name": "Apple AirPods Pro (2nd Gen, USB-C)",
+            "slug": "apple-airpods-pro-2nd-gen-usb-c",
+            "price": "2950",
+            "description": "Authentic Apple AirPods Pro (2nd Gen, USB-C). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1600294037681-c80b4cb5b434.webp"
+          },
+          {
+            "id": "cmva6xfo0004cjhywuhnrf9xh",
+            "name": "Apple Watch Series 9 GPS 45mm",
+            "slug": "apple-watch-series-9-gps-45mm",
+            "price": "4800",
+            "description": "Authentic Apple Watch Series 9 GPS 45mm. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1546868871-7041f2a55e12.webp"
+          },
+          {
+            "id": "cmva6xgkc004kjhyw447oa9yo",
+            "name": "Anker 737 Power Bank 24,000mAh 140W",
+            "slug": "anker-737-power-bank-24000mah-140w",
+            "price": "1450",
+            "description": "Authentic Anker 737 Power Bank 24,000mAh 140W. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1609592426868-b7eb478bbd23.webp"
+          },
+          {
+            "id": "cmva6xgpy004qjhyw21wo1psb",
+            "name": "Logitech MX Master 3S Wireless Mouse",
+            "slug": "logitech-mx-master-3s-performance-mouse",
+            "price": "1250",
+            "description": "Authentic Logitech MX Master 3S Wireless Mouse. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1615663245857-ac93bb7c39e7.webp"
+          },
+          {
+            "id": "cmva6xgry004yjhywaf3a0ln6",
+            "name": "Apple 20W USB-C Fast Power Adapter",
+            "slug": "apple-20w-usb-c-fast-charger",
+            "price": "350",
+            "description": "Authentic Apple 20W USB-C Fast Power Adapter. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1583863788434-e58a36330cf0.webp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Osu African Fashion & Kente Hub",
+    "slug": "osu-fashion-kente-hub",
+    "categories": [
+      {
+        "name": "Bonwire Kente",
+        "slug": "bonwire-kente",
+        "products": [
+          {
+            "id": "cmva6xhkt005fjhywkmnr7hnc",
+            "name": "Handwoven 3-Piece Bonwire Kente Stole Set",
+            "slug": "kente-stole-set-3pc",
+            "price": "1850",
+            "description": "Authentic Handwoven 3-Piece Bonwire Kente Stole Set. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1594938298603-c8148c4dae35.webp"
+          },
+          {
+            "id": "cmva6xhqs005njhywtm5loqbx",
+            "name": "Master Weaver Asantehene Kente Cloth (12 Yards)",
+            "slug": "asantehene-ceremonial-kente-12-yards",
+            "price": "6500",
+            "description": "Authentic Master Weaver Asantehene Kente Cloth (12 Yards). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1579783902614-a3fb3927b675.webp"
+          },
+          {
+            "id": "cmva6xi7i005tjhywiwb321vu",
+            "name": "Bonwire Kente Neck Tie & Pocket Square Set",
+            "slug": "bonwire-kente-necktie-pocket-square",
+            "price": "320",
+            "description": "Authentic Bonwire Kente Neck Tie & Pocket Square Set. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1589756823695-278bc923f962.webp"
+          },
+          {
+            "id": "cmva6xj3t0061jhywjg3jtlp1",
+            "name": "Royal Oyokoman Kente Shoulder Wrap Shawl",
+            "slug": "royal-oyokoman-kente-wrap-shawl",
+            "price": "950",
+            "description": "Authentic Royal Oyokoman Kente Shoulder Wrap Shawl. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1607344645866-009c320c5ab8.webp"
+          },
+          {
+            "id": "cmva6xj7s0067jhywpnj8leqe",
+            "name": "Kente Graduation Ceremonial Stole with Monogram",
+            "slug": "kente-graduation-ceremonial-stole",
+            "price": "450",
+            "description": "Authentic Kente Graduation Ceremonial Stole with Monogram. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1523240795612-9a054b0db644.webp"
+          },
+          {
+            "id": "cmva6xjc9006djhywg6dsyew2",
+            "name": "Handcrafted Kente Clutches & Evening Bag",
+            "slug": "handcrafted-kente-evening-clutch-bag",
+            "price": "380",
+            "description": "Authentic Handcrafted Kente Clutches & Evening Bag. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1584917865442-de89df76afd3.webp"
+          }
+        ]
+      },
+      {
+        "name": "Traditional Smocks (Batakari)",
+        "slug": "traditional-smocks",
+        "products": [
+          {
+            "id": "cmva6xjjl006jjhyw7ymvg9fg",
+            "name": "Northern Ghana Traditional Smock (Fugu / Batakari)",
+            "slug": "northern-traditional-fugu-smock",
+            "price": "650",
+            "description": "Authentic Northern Ghana Traditional Smock (Fugu / Batakari). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1509631179647-0177331693ae.webp"
+          },
+          {
+            "id": "cmva6xjnn006tjhyw2x0mn41a",
+            "name": "Tamale Royal Heavyweight Striped Smock",
+            "slug": "tamale-royal-heavyweight-striped-smock",
+            "price": "820",
+            "description": "Authentic Tamale Royal Heavyweight Striped Smock. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1534528741775-53994a69daeb.webp"
+          },
+          {
+            "id": "cmva6xk210077jhyw6f9da80g",
+            "name": "Hand-Spun Indigo Cotton Batakari Waistcoat",
+            "slug": "indigo-cotton-batakari-waistcoat",
+            "price": "390",
+            "description": "Authentic Hand-Spun Indigo Cotton Batakari Waistcoat. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1500648767791-00dcc994a43e.webp"
+          },
+          {
+            "id": "cmva6xk3f007fjhywfe5i18p6",
+            "name": "Royal Dagbon Chief Smock with Embroidered Collar",
+            "slug": "royal-dagbon-chief-smock-collar",
+            "price": "1200",
+            "description": "Authentic Royal Dagbon Chief Smock with Embroidered Collar. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1492562080023-ab3db95bfbce.webp"
+          },
+          {
+            "id": "cmva6xkad007ljhywdbaasatf",
+            "name": "Modern Tailored Slim-Fit Fugu Shirt",
+            "slug": "modern-tailored-slim-fit-fugu-shirt",
+            "price": "520",
+            "description": "Authentic Modern Tailored Slim-Fit Fugu Shirt. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1519085360753-af0119f7cbe7.webp"
+          },
+          {
+            "id": "cmva6xjux006zjhywoki4nzcy",
+            "name": "Bolgatanga Summer Short-Sleeve Fugu",
+            "slug": "bolgatanga-summer-short-sleeve-fugu",
+            "price": "480",
+            "description": "Authentic Bolgatanga Summer Short-Sleeve Fugu. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1506794778202-cad84cf45f1d.webp"
+          }
+        ]
+      },
+      {
+        "name": "GTP Wax Prints",
+        "slug": "gtp-wax-prints",
+        "products": [
+          {
+            "id": "cmva6xkgw007tjhyw9an7knkw",
+            "name": "African Print Infinity Dress (GTP Wax)",
+            "slug": "african-print-infinity-dress-gtp-wax",
+            "price": "420",
+            "description": "Authentic African Print Infinity Dress (GTP Wax). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1515372039744-b8f02a3ae446.webp"
+          },
+          {
+            "id": "cmva6xkpp0081jhywz75tu560",
+            "name": "Authentic GTP NuStyle Wax Print 6-Yard Piece",
+            "slug": "authentic-gtp-nustyle-wax-print-6-yards",
+            "price": "360",
+            "description": "Authentic Authentic GTP NuStyle Wax Print 6-Yard Piece. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1582719478250-c89cae4dc85b.webp"
+          },
+          {
+            "id": "cmva6xkqb0089jhywqppu3qwj",
+            "name": "GTP Adepa Dumas Premium Cotton Fabric (6 Yards)",
+            "slug": "gtp-adepa-dumas-premium-fabric",
+            "price": "490",
+            "description": "Authentic GTP Adepa Dumas Premium Cotton Fabric (6 Yards). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1558769132-cb1aea458c5e.webp"
+          },
+          {
+            "id": "cmva6xkxo008fjhyw5obv0ygx",
+            "name": "Women’s Peplum Blazer & Pencil Skirt Set",
+            "slug": "womens-peplum-blazer-skirt-set",
+            "price": "680",
+            "description": "Authentic Women’s Peplum Blazer & Pencil Skirt Set. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1539109136881-3be0616acf4b.webp"
+          },
+          {
+            "id": "cmva6xl87008njhywte2eew2f",
+            "name": "Men’s Tailored African Print Button-Down Shirt",
+            "slug": "mens-tailored-african-print-shirt",
+            "price": "340",
+            "description": "Authentic Men’s Tailored African Print Button-Down Shirt. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1489987707025-afc232f7ea0f.webp"
+          },
+          {
+            "id": "cmva6xlfe008vjhyw3cy0tsou",
+            "name": "GTP Print Reversible Bucket Hat & Tote Bag Set",
+            "slug": "gtp-print-bucket-hat-tote-set",
+            "price": "220",
+            "description": "Authentic GTP Print Reversible Bucket Hat & Tote Bag Set. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1544816155-12df9643f363.webp"
+          }
+        ]
+      },
+      {
+        "name": "Beaded Footwear",
+        "slug": "beaded-footwear",
+        "products": [
+          {
+            "id": "cmva6xlmz0091jhywkbojsuty",
+            "name": "Handcrafted Beaded Leather Sandals",
+            "slug": "handcrafted-beaded-leather-sandals-gh",
+            "price": "280",
+            "description": "Authentic Handcrafted Beaded Leather Sandals. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1543163521-1bf539c55dd2.webp"
+          },
+          {
+            "id": "cmva6xltg009bjhywf7rba6gf",
+            "name": "Ashanti Brass Bell Beaded Slippers",
+            "slug": "ashanti-brass-bell-beaded-slippers",
+            "price": "340",
+            "description": "Authentic Ashanti Brass Bell Beaded Slippers. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1560769629-975ec94e6a86.webp"
+          },
+          {
+            "id": "cmva6xlym009jjhywjllhuecf",
+            "name": "Maasai & Ghana Fusion Strappy Beaded Wedges",
+            "slug": "maasai-ghana-fusion-beaded-wedges",
+            "price": "420",
+            "description": "Authentic Maasai & Ghana Fusion Strappy Beaded Wedges. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1535043934128-cf0b28d52f95.webp"
+          },
+          {
+            "id": "cmva6xm3q009rjhyw4s90zaci",
+            "name": "Men’s Hand-Tooled Cowhide Ahenema Slippers",
+            "slug": "mens-hand-tooled-cowhide-ahenema-slippers",
+            "price": "490",
+            "description": "Authentic Men’s Hand-Tooled Cowhide Ahenema Slippers. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1525966222134-fcfa99b8ae77.webp"
+          },
+          {
+            "id": "cmva6xm89009zjhywqicdsiod",
+            "name": "Royal Beaded Leather Slides with Cushioned Insole",
+            "slug": "royal-beaded-leather-slides-cushioned",
+            "price": "290",
+            "description": "Authentic Royal Beaded Leather Slides with Cushioned Insole. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1562273138-f46be4ebdf33.webp"
+          },
+          {
+            "id": "cmva6xmcy00a7jhywezk8payj",
+            "name": "Handwoven Raffia & Glass Bead Espadrilles",
+            "slug": "handwoven-raffia-glass-bead-espadrilles",
+            "price": "310",
+            "description": "Authentic Handwoven Raffia & Glass Bead Espadrilles. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1515347619252-60a4bf4fff4f.webp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gold Coast Shea & Botanicals",
+    "slug": "gold-coast-shea-sanctuary",
+    "categories": [
+      {
+        "name": "Raw Shea Butter",
+        "slug": "raw-shea-butter",
+        "products": [
+          {
+            "id": "cmva3tpvy001njhic7qz7w8x3",
+            "name": "Whipped Northern Shea Butter with Baobab (500g)",
+            "slug": "whipped-northern-shea-butter-baobab",
+            "price": "120",
+            "description": "Authentic Whipped Northern Shea Butter with Baobab (500g). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1608248597359-0021b37d5718.webp"
+          },
+          {
+            "id": "cmva6xn9t00ayjhywrbwuwb80",
+            "name": "Pure Grade-A Ivory Unrefined Shea Butter (1kg Block)",
+            "slug": "pure-grade-a-ivory-unrefined-shea-butter-1kg",
+            "price": "140",
+            "description": "Authentic Pure Grade-A Ivory Unrefined Shea Butter (1kg Block). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1598440947619-2c35fc9aa908.webp"
+          },
+          {
+            "id": "cmva6xne800bajhywvwxoe8ga",
+            "name": "Shea & Mango Butter Deep Moisturizing Body Cream",
+            "slug": "shea-mango-butter-deep-moisturizer",
+            "price": "95",
+            "description": "Authentic Shea & Mango Butter Deep Moisturizing Body Cream. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1570172619644-dfd03ed5d881.webp"
+          },
+          {
+            "id": "cmva6xnsp00bgjhywzkwxphvt",
+            "name": "Baby Calming Ultra-Gentle Shea & Calendula Salve",
+            "slug": "baby-calming-gentle-shea-calendula-salve",
+            "price": "80",
+            "description": "Authentic Baby Calming Ultra-Gentle Shea & Calendula Salve. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1522337360788-8b13dee7a37e.webp"
+          },
+          {
+            "id": "cmva6xnwm00bmjhywcx20mifk",
+            "name": "Eucalyptus & Peppermint Muscle Relief Shea Rub",
+            "slug": "eucalyptus-peppermint-muscle-relief-shea-rub",
+            "price": "115",
+            "description": "Authentic Eucalyptus & Peppermint Muscle Relief Shea Rub. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1617897903246-719242758050.webp"
+          },
+          {
+            "id": "cmva6xnab00b4jhywz5je2quq",
+            "name": "Golden Yellow Shea Butter with Borututu Bark (500g)",
+            "slug": "golden-yellow-shea-butter-borututu-500g",
+            "price": "110",
+            "description": "Authentic Golden Yellow Shea Butter with Borututu Bark (500g). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1556228720-195a672e8a03.webp"
+          }
+        ]
+      },
+      {
+        "name": "African Black Soap",
+        "slug": "african-black-soap",
+        "products": [
+          {
+            "id": "cmva3tpw8001vjhic7gch0oif",
+            "name": "Traditional African Black Soap Paste (Alata Samina 400g)",
+            "slug": "traditional-african-black-soap-alata-samina",
+            "price": "65",
+            "description": "Authentic Traditional African Black Soap Paste (Alata Samina 400g). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1584308666744-24d5c474f2ae.webp"
+          },
+          {
+            "id": "cmva6xoar00byjhywhxw7zrj5",
+            "name": "Liquid African Black Soap Body Wash with Raw Honey (500ml)",
+            "slug": "liquid-black-soap-body-wash-raw-honey-500ml",
+            "price": "85",
+            "description": "Authentic Liquid African Black Soap Body Wash with Raw Honey (500ml). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1601049541289-9b1b7bbbfe19.webp"
+          },
+          {
+            "id": "cmva6xogy00c4jhyw7ie3o5b6",
+            "name": "Clarifying Activated Charcoal & Tea Tree Black Soap Bar",
+            "slug": "activated-charcoal-tea-tree-black-soap-bar",
+            "price": "45",
+            "description": "Authentic Clarifying Activated Charcoal & Tea Tree Black Soap Bar. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1607006314644-b0a1f298818c.webp"
+          },
+          {
+            "id": "cmva6xoqu00cajhywb3shxxp3",
+            "name": "Turmeric & Neem Brightening Black Soap Facial Scrub",
+            "slug": "turmeric-neem-brightening-black-soap-scrub",
+            "price": "70",
+            "description": "Authentic Turmeric & Neem Brightening Black Soap Facial Scrub. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1556760544-74068565f05c.webp"
+          },
+          {
+            "id": "cmva6xp2o00cgjhywzhae7tj6",
+            "name": "Gentle Foaming Black Soap Facial Cleanser with Aloe (200ml)",
+            "slug": "gentle-foaming-black-soap-aloe-cleanser",
+            "price": "75",
+            "description": "Authentic Gentle Foaming Black Soap Facial Cleanser with Aloe (200ml). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1535585209827-a15fcdbc4c2d.webp"
+          },
+          {
+            "id": "cmva6xpce00cmjhywu6jgmmdi",
+            "name": "Exfoliating Sisal Mesh Sponge Infused with Alata Samina",
+            "slug": "exfoliating-sisal-mesh-infused-black-soap",
+            "price": "50",
+            "description": "Authentic Exfoliating Sisal Mesh Sponge Infused with Alata Samina. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1598662957563-ee4965d4d72c.webp"
+          }
+        ]
+      },
+      {
+        "name": "Hair Elixirs",
+        "slug": "hair-elixirs",
+        "products": [
+          {
+            "id": "cmva3tpwv001zjhichdn5ra0v",
+            "name": "Cold-Pressed Virgin Coconut & Hibiscus Hair Elixir (250ml)",
+            "slug": "coconut-hibiscus-hair-elixir-ghana",
+            "price": "95",
+            "description": "Authentic Cold-Pressed Virgin Coconut & Hibiscus Hair Elixir (250ml). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1620916566398-39f1143ab7be.webp"
+          },
+          {
+            "id": "cmva6xplc00cyjhywakl0gu03",
+            "name": "Chebe & Jamaican Black Castor Hair Growth Oil (150ml)",
+            "slug": "chebe-black-castor-hair-growth-oil",
+            "price": "110",
+            "description": "Authentic Chebe & Jamaican Black Castor Hair Growth Oil (150ml). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1608248543803-ba4f8c70ae0b.webp"
+          },
+          {
+            "id": "cmva6xpmh00d4jhywl9nt8zwv",
+            "name": "Baobab & Moringa Scalp Soothing Treatment (100ml)",
+            "slug": "baobab-moringa-scalp-soothing-treatment",
+            "price": "85",
+            "description": "Authentic Baobab & Moringa Scalp Soothing Treatment (100ml). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1598452963314-b09f397a5c48.webp"
+          },
+          {
+            "id": "cmva6xq1p00dajhywqovgipdo",
+            "name": "Raw Cocoa Butter Leave-In Conditioning Hair Cream (300g)",
+            "slug": "raw-cocoa-butter-leave-in-hair-cream",
+            "price": "90",
+            "description": "Authentic Raw Cocoa Butter Leave-In Conditioning Hair Cream (300g). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1571781926291-c477ebfd024b.webp"
+          },
+          {
+            "id": "cmva6xq7a00dgjhywwksa2dl0",
+            "name": "Rosemary & Peppermint Hair Follicle Tonic (200ml Spray)",
+            "slug": "rosemary-peppermint-hair-follicle-spray",
+            "price": "75",
+            "description": "Authentic Rosemary & Peppermint Hair Follicle Tonic (200ml Spray). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1585232351009-aa87416fca90.webp"
+          },
+          {
+            "id": "cmva6xq8k00dmjhywjukfcn0k",
+            "name": "Coastal Avocado & Argan Deep Moisture Hair Mask (350g)",
+            "slug": "coastal-avocado-argan-deep-moisture-hair-mask",
+            "price": "115",
+            "description": "Authentic Coastal Avocado & Argan Deep Moisture Hair Mask (350g). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1567928805192-7ff4c28001a1.webp"
+          }
+        ]
+      },
+      {
+        "name": "Lip & Body Scrubs",
+        "slug": "lip-body-scrubs",
+        "products": [
+          {
+            "id": "prod-gold-coast-shea-sanctuary",
+            "name": "Pure Cocoa Butter Lip Balm & Organic Sugar Scrub Set",
+            "slug": "cocoa-butter-lip-balm-sugar-scrub-set",
+            "price": "55",
+            "description": "Authentic Pure Cocoa Butter Lip Balm & Organic Sugar Scrub Set. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1586495777744-4413f21062fa.webp"
+          },
+          {
+            "id": "cmva6xrjc00dyjhywrlgi8kae",
+            "name": "Brown Sugar & Roasted Robusta Coffee Body Polish (350g)",
+            "slug": "brown-sugar-roasted-coffee-body-polish",
+            "price": "90",
+            "description": "Authentic Brown Sugar & Roasted Robusta Coffee Body Polish (350g). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1519735777090-ec97162dc266.webp"
+          },
+          {
+            "id": "cmva6xrvr00e4jhywov5civ7k",
+            "name": "Volta Sea Salt & Lemongrass Radiance Body Scrub (400g)",
+            "slug": "volta-sea-salt-lemongrass-body-scrub",
+            "price": "85",
+            "description": "Authentic Volta Sea Salt & Lemongrass Radiance Body Scrub (400g). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1540555700478-4be289fbecef.webp"
+          },
+          {
+            "id": "cmva6xse800egjhywzu4ys25q",
+            "name": "Shea & Vanilla Overnight Hydrating Lip Sleeping Mask",
+            "slug": "shea-vanilla-overnight-lip-sleeping-mask",
+            "price": "45",
+            "description": "Authentic Shea & Vanilla Overnight Hydrating Lip Sleeping Mask. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1527799820374-dcf8d9d4a388.webp"
+          },
+          {
+            "id": "cmva6xsog00emjhyw1mrl42ew",
+            "name": "Coconut Lime Cooling Foot & Cracked Heel Scrub (250g)",
+            "slug": "coconut-lime-cooling-heel-scrub",
+            "price": "65",
+            "description": "Authentic Coconut Lime Cooling Foot & Cracked Heel Scrub (250g). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1515377905703-c4788e51af15.webp"
+          },
+          {
+            "id": "cmva6xrzm00eajhyw6l4bboc1",
+            "name": "Hibiscus & Rosehip Petal Exfoliating Glow Polish",
+            "slug": "hibiscus-rosehip-petal-glow-polish",
+            "price": "95",
+            "description": "Authentic Hibiscus & Rosehip Petal Exfoliating Glow Polish. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1512290900672-1f416ba38814.webp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Makola Heritage Provisions",
+    "slug": "makola-heritage-provisions",
+    "categories": [
+      {
+        "name": "Artisan Shito",
+        "slug": "artisan-shito",
+        "products": [
+          {
+            "id": "cmva3tpyz002ijhicosayax4r",
+            "name": "Artisanal Smoked Shrimp & Fish Shito (350ml Jar)",
+            "slug": "artisanal-smoked-shrimp-fish-shito-jar",
+            "price": "75",
+            "description": "Authentic Artisanal Smoked Shrimp & Fish Shito (350ml Jar). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1540420773420-3366772f4999.webp"
+          },
+          {
+            "id": "cmva6xueg00fbjhyw473m9taj",
+            "name": "Extra Hot Scotch Bonnet Fire Shito (350ml Jar)",
+            "slug": "extra-hot-scotch-bonnet-shito",
+            "price": "75",
+            "description": "Authentic Extra Hot Scotch Bonnet Fire Shito (350ml Jar). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1596040033229-a9821ebd058d.webp"
+          },
+          {
+            "id": "cmva6xurv00fhjhywiijra6bx",
+            "name": "Vegetarian & Vegan Shiitake Mushroom Shito (300ml)",
+            "slug": "vegetarian-vegan-mushroom-shito",
+            "price": "80",
+            "description": "Authentic Vegetarian & Vegan Shiitake Mushroom Shito (300ml). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1514944298352-78d123dbf075.webp"
+          },
+          {
+            "id": "cmva6xv4h00fnjhywbr4y1oup",
+            "name": "Smoked Crayfish & Garlic Black Pepper Sauce (350ml)",
+            "slug": "smoked-crayfish-garlic-black-pepper-shito",
+            "price": "85",
+            "description": "Authentic Smoked Crayfish & Garlic Black Pepper Sauce (350ml). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1621996346565-e3d5d628178d.webp"
+          },
+          {
+            "id": "cmva6xvev00ftjhywem1wixlg",
+            "name": "Green Pepper & Ginger Kpakpo Shito (300ml Jar)",
+            "slug": "green-pepper-ginger-kpakpo-shito",
+            "price": "65",
+            "description": "Authentic Green Pepper & Ginger Kpakpo Shito (300ml Jar). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1588166524941-3bf61a9c41db.webp"
+          },
+          {
+            "id": "cmva6xvvu00fzjhyw8ce4x94p",
+            "name": "Gourmet Seafood Supreme Shito (Crab, Shrimp & Herrings)",
+            "slug": "gourmet-seafood-supreme-shito",
+            "price": "110",
+            "description": "Authentic Gourmet Seafood Supreme Shito (Crab, Shrimp & Herrings). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1563379091339-03b21ab4a4f8.webp"
+          }
+        ]
+      },
+      {
+        "name": "Heritage Spices",
+        "slug": "heritage-spices",
+        "products": [
+          {
+            "id": "cmva3tpz3002qjhice50ll5gd",
+            "name": "Whole Prekese & Indigenous Spices Wellness Pack (500g)",
+            "slug": "whole-prekese-indigenous-spices-pack",
+            "price": "45",
+            "description": "Authentic Whole Prekese & Indigenous Spices Wellness Pack (500g). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1509358271058-acd22cc93898.webp"
+          },
+          {
+            "id": "prod-makola-heritage-provision",
+            "name": "Organic Sun-Dried Dawadawa & Locust Beans Paste",
+            "slug": "organic-sun-dried-dawadawa-locust-paste",
+            "price": "40",
+            "description": "Authentic Organic Sun-Dried Dawadawa & Locust Beans Paste. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1532336414038-cf19250c5757.webp"
+          },
+          {
+            "id": "cmva6xwcu00gdjhywck86u76h",
+            "name": "Calabash Nutmeg (African Nutmeg / Wedee Aba) Whole Pods",
+            "slug": "calabash-nutmeg-wedee-aba-pods",
+            "price": "35",
+            "description": "Authentic Calabash Nutmeg (African Nutmeg / Wedee Aba) Whole Pods. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1514733670139-4d87a1941d55.webp"
+          },
+          {
+            "id": "cmva6xwhv00ghjhyw8g0oo80u",
+            "name": "Grains of Paradise (Alligator Pepper / Efom Wisa) 100g",
+            "slug": "grains-of-paradise-alligator-pepper",
+            "price": "45",
+            "description": "Authentic Grains of Paradise (Alligator Pepper / Efom Wisa) 100g. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1599940824399-b87987ceb72a.webp"
+          },
+          {
+            "id": "cmva6xwlg00gljhywbhl8g1i4",
+            "name": "Sun-Dried Organic Ginger Root Powder (200g Jar)",
+            "slug": "sun-dried-organic-ginger-powder",
+            "price": "35",
+            "description": "Authentic Sun-Dried Organic Ginger Root Powder (200g Jar). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1615485290382-441e4d049cb5.webp"
+          },
+          {
+            "id": "cmva6xwry00gpjhywswxjdbmi",
+            "name": "Ghanaian Jollof Master Spice Blend Seasoning (250g)",
+            "slug": "ghanaian-jollof-master-spice-blend",
+            "price": "55",
+            "description": "Authentic Ghanaian Jollof Master Spice Blend Seasoning (250g). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1506368249639-73a05d6f6488.webp"
+          }
+        ]
+      },
+      {
+        "name": "Grains & Flours",
+        "slug": "grains-flours",
+        "products": [
+          {
+            "id": "cmva3tpz6002ujhica1e23vbm",
+            "name": "Crispy Yellow Gari Soakings Special (2kg Sack)",
+            "slug": "crispy-yellow-gari-soakings-2kg",
+            "price": "50",
+            "description": "Authentic Crispy Yellow Gari Soakings Special (2kg Sack). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1586201375761-83865001e31c.webp"
+          },
+          {
+            "id": "cmva6xxf600gxjhyw51tm6emm",
+            "name": "Fine White Fortified Cassava Gari (2kg Sack)",
+            "slug": "fine-white-fortified-cassava-gari-2kg",
+            "price": "45",
+            "description": "Authentic Fine White Fortified Cassava Gari (2kg Sack). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1574323347407-f5e1ad6d020b.webp"
+          },
+          {
+            "id": "cmva6xxsz00h1jhywsinafkka",
+            "name": "Fermented Corn & Cassava Dough for Banku (Fresh 2kg)",
+            "slug": "fermented-corn-cassava-dough-banku",
+            "price": "35",
+            "description": "Authentic Fermented Corn & Cassava Dough for Banku (Fresh 2kg). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1509440159596-0249088772ff.webp"
+          },
+          {
+            "id": "cmva6xydj00h5jhywzrtxthh0",
+            "name": "Organic Roasted Corn Flour for Tom Brown Porridge (1kg)",
+            "slug": "tom-brown-roasted-corn-porridge-flour",
+            "price": "40",
+            "description": "Authentic Organic Roasted Corn Flour for Tom Brown Porridge (1kg). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1607623814075-e51df1bdc82f.webp"
+          },
+          {
+            "id": "cmva6xzcu00hdjhywtxqvq7ti",
+            "name": "Hausa Koko Spiced Millet Porridge Flour (1kg Pack)",
+            "slug": "hausa-koko-spiced-millet-flour",
+            "price": "42",
+            "description": "Authentic Hausa Koko Spiced Millet Porridge Flour (1kg Pack). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1543339308-43e59d6b73a6.webp"
+          },
+          {
+            "id": "cmva6xyuc00h9jhyw9h2vysuw",
+            "name": "Traditional Kokonte Dried Cassava Flour (1.5kg)",
+            "slug": "traditional-kokonte-cassava-flour",
+            "price": "38",
+            "description": "Authentic Traditional Kokonte Dried Cassava Flour (1.5kg). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1610832958506-aa56368176cf.webp"
+          }
+        ]
+      },
+      {
+        "name": "Traditional Teas & Brews",
+        "slug": "traditional-teas-brews",
+        "products": [
+          {
+            "id": "cmva6xznf00hhjhyw6xwjvt0c",
+            "name": "Sun-Dried Organic Hibiscus Flowers (Sobolo Petals 500g)",
+            "slug": "sun-dried-hibiscus-sobolo-flowers-500g",
+            "price": "50",
+            "description": "Authentic Sun-Dried Organic Hibiscus Flowers (Sobolo Petals 500g). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1576092768241-dec231879fc3.webp"
+          },
+          {
+            "id": "cmva6y00800hljhywmzdc29xz",
+            "name": "Dried Lemongrass Loose Tea Leaves (150g Pouch)",
+            "slug": "dried-lemongrass-loose-tea-leaves",
+            "price": "35",
+            "description": "Authentic Dried Lemongrass Loose Tea Leaves (150g Pouch). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1544787219-7f47ccb76574.webp"
+          },
+          {
+            "id": "cmva6y08f00hpjhywyp641i8n",
+            "name": "Moringa Leaf Detox Herbal Tea Bags (30 Count Box)",
+            "slug": "moringa-leaf-detox-herbal-tea-bags",
+            "price": "45",
+            "description": "Authentic Moringa Leaf Detox Herbal Tea Bags (30 Count Box). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1558160074-4d7d8bdf4256.webp"
+          },
+          {
+            "id": "cmva6y0gu00htjhywprahnl0s",
+            "name": "Ghanaian Hot Ginger & Lime Herbal Tea Infusion",
+            "slug": "ghanaian-hot-ginger-lime-tea-infusion",
+            "price": "40",
+            "description": "Authentic Ghanaian Hot Ginger & Lime Herbal Tea Infusion. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1513558161293-cdaf765ed2fd.webp"
+          },
+          {
+            "id": "cmva6y0vw00hxjhyweln0fije",
+            "name": "Bitter Leaf (Awonwono) Wellness Herbal Cleanse Tea",
+            "slug": "bitter-leaf-wellness-herbal-cleanse",
+            "price": "42",
+            "description": "Authentic Bitter Leaf (Awonwono) Wellness Herbal Cleanse Tea. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1597481499750-3e6b22637e12.webp"
+          },
+          {
+            "id": "cmva6y1dh00i1jhywu71gqpec",
+            "name": "Soursop (Aluguntugui) Leaf Calming Herbal Infusion",
+            "slug": "soursop-aluguntugui-leaf-calming-tea",
+            "price": "48",
+            "description": "Authentic Soursop (Aluguntugui) Leaf Calming Herbal Infusion. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1564890369478-c89ca6d9cde9.webp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Aburi Woodcrafts & Interior Living",
+    "slug": "aburi-woodcrafts-living",
+    "categories": [
+      {
+        "name": "Adinkra Clocks & Wall Art",
+        "slug": "adinkra-clocks-wall-art",
+        "products": [
+          {
+            "id": "prod-aburi-woodcrafts-living-a",
+            "name": "Adinkra Symbols Wall Clock (14-Inch Brass & Cedar)",
+            "slug": "adinkra-symbols-wall-clock-brass-wood",
+            "price": "380",
+            "description": "Authentic Adinkra Symbols Wall Clock (14-Inch Brass & Cedar). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1563861826100-9cb868fdbe1c.webp"
+          },
+          {
+            "id": "cmva6y4s000jojhyw31kt1j96",
+            "name": "Sankofa Bird Wooden Wall Plaque (Hand-Carved Mahogany)",
+            "slug": "sankofa-bird-wooden-wall-plaque",
+            "price": "290",
+            "description": "Authentic Sankofa Bird Wooden Wall Plaque (Hand-Carved Mahogany). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1577083552431-6e5fd01aa342.webp"
+          },
+          {
+            "id": "cmva6y4vf00jsjhywrlu9jrle",
+            "name": "Framed Brass Ashanti Gold Weights Art Trio (Shadowbox)",
+            "slug": "framed-brass-ashanti-gold-weights-trio",
+            "price": "540",
+            "description": "Authentic Framed Brass Ashanti Gold Weights Art Trio (Shadowbox). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1582561424760-0321d75e81fa.webp"
+          },
+          {
+            "id": "cmva6y54000k0jhywu8kzp854",
+            "name": "Carved Ebony Wood Silhouette Face Mask Wall Art",
+            "slug": "carved-ebony-silhouette-face-mask",
+            "price": "420",
+            "description": "Authentic Carved Ebony Wood Silhouette Face Mask Wall Art. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1579783900882-c0d3dad7b119.webp"
+          },
+          {
+            "id": "cmva6y5aj00k4jhywgrzudq7f",
+            "name": "Sun & Moon African Celestial Carved Wall Panel",
+            "slug": "sun-moon-celestial-carved-wall-panel",
+            "price": "480",
+            "description": "Authentic Sun & Moon African Celestial Carved Wall Panel. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1513519245088-0e12902e5a38.webp"
+          },
+          {
+            "id": "cmva6y52j00jwjhyw4xjap05r",
+            "name": "Hand-Painted Adinkra Wisdom Canvas Wall Hanging",
+            "slug": "hand-painted-adinkra-wisdom-canvas",
+            "price": "350",
+            "description": "Authentic Hand-Painted Adinkra Wisdom Canvas Wall Hanging. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1549887534-1541e9326642.webp"
+          }
+        ]
+      },
+      {
+        "name": "Bolga Baskets",
+        "slug": "bolga-baskets",
+        "products": [
+          {
+            "id": "prod-aburi-woodcrafts-living-b",
+            "name": "Bolgatanga Hand-Woven Elephant Grass Laundry Basket",
+            "slug": "bolgatanga-woven-elephant-grass-laundry-basket",
+            "price": "320",
+            "description": "Authentic Bolgatanga Hand-Woven Elephant Grass Laundry Basket. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1528459801416-a9e53bbf4e17.webp"
+          },
+          {
+            "id": "cmva6y5lh00kgjhyw5gqpm6vq",
+            "name": "Classic Bolga Round Market Basket with Leather Handle",
+            "slug": "classic-bolga-round-market-basket",
+            "price": "180",
+            "description": "Authentic Classic Bolga Round Market Basket with Leather Handle. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1595341888016-a392ef81b7de.webp"
+          },
+          {
+            "id": "cmva6y5q800kojhywyop4dvzp",
+            "name": "Bolga Oval Picnic Basket with Dual Wooden Flap Lids",
+            "slug": "bolga-oval-picnic-basket-wooden-lids",
+            "price": "260",
+            "description": "Authentic Bolga Oval Picnic Basket with Dual Wooden Flap Lids. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1578749556568-bc2c40e68b61.webp"
+          },
+          {
+            "id": "cmva6y5xs00ksjhyw723x8t32",
+            "name": "Bolga Woven Hanging Macrame Planter Trio",
+            "slug": "bolga-woven-hanging-planter-trio",
+            "price": "210",
+            "description": "Authentic Bolga Woven Hanging Macrame Planter Trio. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1485955900006-10f4d324d411.webp"
+          },
+          {
+            "id": "cmva6y61v00kwjhyw6xxjc36w",
+            "name": "Miniature Bolga Tabletop Catchall Baskets (Set of 3)",
+            "slug": "miniature-bolga-tabletop-catchall-set",
+            "price": "150",
+            "description": "Authentic Miniature Bolga Tabletop Catchall Baskets (Set of 3). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1526170375885-4d8ecf77b99f.webp"
+          },
+          {
+            "id": "cmva6y65t00l0jhywxzalprbd",
+            "name": "Cylindrical Bolga Floor Storage Hamper with Fitted Lid",
+            "slug": "cylindrical-bolga-floor-storage-hamper",
+            "price": "380",
+            "description": "Authentic Cylindrical Bolga Floor Storage Hamper with Fitted Lid. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1589939705384-5185137a7f0f.webp"
+          }
+        ]
+      },
+      {
+        "name": "Kitchen Woodenware",
+        "slug": "kitchen-woodenware",
+        "products": [
+          {
+            "id": "prod-aburi-woodcrafts-living-c",
+            "name": "Carved African Ebony Wood Salad Serving Spoons Set",
+            "slug": "carved-ebony-wood-salad-spoons-set",
+            "price": "160",
+            "description": "Authentic Carved African Ebony Wood Salad Serving Spoons Set. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1584269600464-37b1b58a9fe7.webp"
+          },
+          {
+            "id": "cmva6y6jy00l8jhywnhcw5fgt",
+            "name": "Solid Mahogany End-Grain Kitchen Chopping Board",
+            "slug": "solid-mahogany-end-grain-chopping-board",
+            "price": "280",
+            "description": "Authentic Solid Mahogany End-Grain Kitchen Chopping Board. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1590794056226-79ef3a8147e1.webp"
+          },
+          {
+            "id": "cmva6y6zo00lcjhywkoplylqw",
+            "name": "Traditional Hand-Carved Wooden Pestle & Mortar (Asanka Set)",
+            "slug": "traditional-wooden-pestle-mortar-asanka",
+            "price": "190",
+            "description": "Authentic Traditional Hand-Carved Wooden Pestle & Mortar (Asanka Set). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1546554137-f86b9593a222.webp"
+          },
+          {
+            "id": "cmva6y74400lgjhywzram8pfo",
+            "name": "Teak Wood Coaster Set with Carved Adinkra Motifs (6-Piece)",
+            "slug": "teak-wood-coaster-set-adinkra-motifs",
+            "price": "95",
+            "description": "Authentic Teak Wood Coaster Set with Carved Adinkra Motifs (6-Piece). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1533090161767-e6ffed986c88.webp"
+          },
+          {
+            "id": "cmva6y79700lkjhywzakddocl",
+            "name": "Olive Wood Bread & Charcuterie Serving Board with Handle",
+            "slug": "olive-wood-charcuterie-serving-board",
+            "price": "220",
+            "description": "Authentic Olive Wood Bread & Charcuterie Serving Board with Handle. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1590736969955-71cc94801759.webp"
+          },
+          {
+            "id": "cmva6y7im00lojhyw2epdz4ea",
+            "name": "Handcrafted Wooden Rice & Fufu Spatula Spoon Set",
+            "slug": "handcrafted-wooden-rice-fufu-spatula-set",
+            "price": "85",
+            "description": "Authentic Handcrafted Wooden Rice & Fufu Spatula Spoon Set. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1584269600519-112d071b35e6.webp"
+          }
+        ]
+      },
+      {
+        "name": "Royal Stools",
+        "slug": "royal-stools",
+        "products": [
+          {
+            "id": "prod-aburi-woodcrafts-living-r",
+            "name": "Hand-Carved Royal Ashanti Gye Nyame Stool (Solid Mahogany)",
+            "slug": "royal-ashanti-gye-nyame-stool-solid-mahogany",
+            "price": "1450",
+            "description": "Authentic Hand-Carved Royal Ashanti Gye Nyame Stool (Solid Mahogany). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1503602642458-232111445657.webp"
+          },
+          {
+            "id": "cmva6y2it00iojhyw0eljiidg",
+            "name": "Osram (Crescent Moon) Ashanti Traditional Stool",
+            "slug": "osram-crescent-moon-ashanti-stool",
+            "price": "1250",
+            "description": "Authentic Osram (Crescent Moon) Ashanti Traditional Stool. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1538688525198-9b88f6f53126.webp"
+          },
+          {
+            "id": "cmva6y35z00iujhywie5r34oc",
+            "name": "Bi-Nka-Bi (Harmony & Peace) Carved Hardwood Stool",
+            "slug": "bi-nka-bi-harmony-carved-stool",
+            "price": "1380",
+            "description": "Authentic Bi-Nka-Bi (Harmony & Peace) Carved Hardwood Stool. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1519710164239-da123dc03ef4.webp"
+          },
+          {
+            "id": "cmva6y3la00j0jhywxqolwvwp",
+            "name": "Compact Cedar Fireside Stool with Brass Studs",
+            "slug": "compact-cedar-fireside-stool-brass",
+            "price": "650",
+            "description": "Authentic Compact Cedar Fireside Stool with Brass Studs. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1555041469-a586c61ea9bc.webp"
+          },
+          {
+            "id": "cmva6y3t900j6jhywse5ko7gj",
+            "name": "Queen Mother (Ohemmaa) Ceremonial Carved Stool",
+            "slug": "queen-mother-ohemmaa-ceremonial-stool",
+            "price": "1800",
+            "description": "Authentic Queen Mother (Ohemmaa) Ceremonial Carved Stool. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1586023492125-27b2c045efd7.webp"
+          },
+          {
+            "id": "cmva6y4ah00jcjhyw3iff784h",
+            "name": "Contemporary African Round Low Stool with Leather Cushion",
+            "slug": "contemporary-round-low-stool-leather",
+            "price": "850",
+            "description": "Authentic Contemporary African Round Low Stool with Leather Cushion. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1592078615290-033ee584e267.webp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Afro-Bites Gourmet & Cocoa Co.",
+    "slug": "afro-bites-gourmet-treats",
+    "categories": [
+      {
+        "name": "Single-Origin Chocolates",
+        "slug": "single-origin-chocolates",
+        "products": [
+          {
+            "id": "cmva3tqmu004cjhicyfnx65gf",
+            "name": "Single-Origin 72% Dark Cocoa Chocolate Bar Gift Box (4 x 80g)",
+            "slug": "single-origin-72-dark-cocoa-chocolate-gift-box",
+            "price": "180",
+            "description": "Authentic Single-Origin 72% Dark Cocoa Chocolate Bar Gift Box (4 x 80g). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1548907040-4baa42d10919.webp"
+          },
+          {
+            "id": "cmva6y8i600m7jhyw4d7uulu0",
+            "name": "85% Extra Dark Ghanaian Cocoa Artisan Bar (100g)",
+            "slug": "85-extra-dark-ghanaian-cocoa-bar",
+            "price": "50",
+            "description": "Authentic 85% Extra Dark Ghanaian Cocoa Artisan Bar (100g). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1606313564200-e75d5e30476c.webp"
+          },
+          {
+            "id": "cmva6y8mx00mbjhywxpvok9g5",
+            "name": "Milk Chocolate with Toasted Coconut & Sea Salt Nibs (100g)",
+            "slug": "milk-chocolate-toasted-coconut-sea-salt",
+            "price": "48",
+            "description": "Authentic Milk Chocolate with Toasted Coconut & Sea Salt Nibs (100g). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1511381939415-e44015466834.webp"
+          },
+          {
+            "id": "cmva6y8rl00mfjhywwkm3c2g4",
+            "name": "Spiced Chili & Hot Ginger Dark Chocolate Bar (100g)",
+            "slug": "spiced-chili-hot-ginger-dark-chocolate",
+            "price": "48",
+            "description": "Authentic Spiced Chili & Hot Ginger Dark Chocolate Bar (100g). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1549007994-cb92caebd54b.webp"
+          },
+          {
+            "id": "cmva6y8z900mnjhywukng1yaa",
+            "name": "Roasted Cocoa Nibs Dark Chocolate Praline Truffles (Box of 8)",
+            "slug": "cocoa-nibs-dark-chocolate-praline-truffles",
+            "price": "120",
+            "description": "Authentic Roasted Cocoa Nibs Dark Chocolate Praline Truffles (Box of 8). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1541781774459-bb2af2f05b55.webp"
+          },
+          {
+            "id": "cmva6y8tx00mjjhywg8924zw8",
+            "name": "Bourbon Vanilla White Chocolate with Passionfruit Swirl",
+            "slug": "bourbon-vanilla-white-chocolate-passionfruit",
+            "price": "52",
+            "description": "Authentic Bourbon Vanilla White Chocolate with Passionfruit Swirl. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1587132137056-bfbf0166836e.webp"
+          }
+        ]
+      },
+      {
+        "name": "Savannah Cashews",
+        "slug": "savannah-cashews",
+        "products": [
+          {
+            "id": "cmva3tqo6004gjhic8yxqj4nd",
+            "name": "Savannah Honey-Glazed Roasted Cashews (300g Tin)",
+            "slug": "savannah-honey-glazed-roasted-cashews-tin",
+            "price": "95",
+            "description": "Authentic Savannah Honey-Glazed Roasted Cashews (300g Tin). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1536591375315-1b83683e321c.webp"
+          },
+          {
+            "id": "cmva6y96e00mzjhywfqjss12z",
+            "name": "Slow-Roasted Sea Salt Whole Cashews (300g Tin)",
+            "slug": "slow-roasted-sea-salt-whole-cashews-tin",
+            "price": "90",
+            "description": "Authentic Slow-Roasted Sea Salt Whole Cashews (300g Tin). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1508746829417-e6f548d8d6ed.webp"
+          },
+          {
+            "id": "cmva6y98f00n3jhyw3qcfm9vk",
+            "name": "Hot Chili & African Cayenne Roasted Cashews (250g Pouch)",
+            "slug": "hot-chili-cayenne-roasted-cashews-pouch",
+            "price": "80",
+            "description": "Authentic Hot Chili & African Cayenne Roasted Cashews (250g Pouch). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1599599810769-bcde5a160d32.webp"
+          },
+          {
+            "id": "cmva6y99k00n7jhywent921dg",
+            "name": "Smoked Paprika & Garlic Savory Cashew Crunch (250g)",
+            "slug": "smoked-paprika-garlic-savory-cashew-crunch",
+            "price": "85",
+            "description": "Authentic Smoked Paprika & Garlic Savory Cashew Crunch (250g). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1511688878353-3a2f5be94cd7.webp"
+          },
+          {
+            "id": "cmva6y9bt00nbjhywvj51lkvb",
+            "name": "Raw Organic Whole Cashew Kernels for Baking (500g Bag)",
+            "slug": "raw-organic-whole-cashew-kernels-500g",
+            "price": "120",
+            "description": "Authentic Raw Organic Whole Cashew Kernels for Baking (500g Bag). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1563729784474-d77dbb933a9e.webp"
+          },
+          {
+            "id": "cmva6y9eg00nfjhywjzh3mxel",
+            "name": "Dark Chocolate-Dipped Roasted Cashew Pralines (200g Box)",
+            "slug": "dark-chocolate-dipped-roasted-cashews",
+            "price": "110",
+            "description": "Authentic Dark Chocolate-Dipped Roasted Cashew Pralines (200g Box). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1528740561666-dc2479dc08ab.webp"
+          }
+        ]
+      },
+      {
+        "name": "Dried Fruits",
+        "slug": "dried-fruits",
+        "products": [
+          {
+            "id": "cmva3tqoi004ojhicx8b2rg1x",
+            "name": "Sun-Dried Organic Volta Mango Strips (200g Pack)",
+            "slug": "sun-dried-organic-volta-mango-strips",
+            "price": "45",
+            "description": "Authentic Sun-Dried Organic Volta Mango Strips (200g Pack). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1550258987-190a2d41a8ba.webp"
+          },
+          {
+            "id": "cmva6ya3v00nnjhyw9hze60fo",
+            "name": "Chewy Sweet Sun-Dried Pineapple Ring Slices (200g Pack)",
+            "slug": "chewy-sweet-sun-dried-pineapple-rings",
+            "price": "45",
+            "description": "Authentic Chewy Sweet Sun-Dried Pineapple Ring Slices (200g Pack). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1589533610925-1cffc309ebaa.webp"
+          },
+          {
+            "id": "cmva6yacb00nrjhyw74dexxx6",
+            "name": "Natural Sun-Dried Papaya Chunks with Lime (200g Pack)",
+            "slug": "natural-sun-dried-papaya-chunks-lime",
+            "price": "42",
+            "description": "Authentic Natural Sun-Dried Papaya Chunks with Lime (200g Pack). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1517282009859-f000ec3b26fe.webp"
+          },
+          {
+            "id": "cmva6yao100nvjhywmmwc69yp",
+            "name": "Toasted Coconut Smiles Chips with Sea Salt (150g Pouch)",
+            "slug": "toasted-coconut-smiles-chips-sea-salt",
+            "price": "38",
+            "description": "Authentic Toasted Coconut Smiles Chips with Sea Salt (150g Pouch). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1568702846914-96b305d2aaeb.webp"
+          },
+          {
+            "id": "cmva6yaya00nzjhywwnz3atoo",
+            "name": "Tropical Harvest Trail Mix (Mango, Cashew & Pineapple 250g)",
+            "slug": "tropical-harvest-trail-mix-250g",
+            "price": "75",
+            "description": "Authentic Tropical Harvest Trail Mix (Mango, Cashew & Pineapple 250g). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1505253758473-96b7015fcd40.webp"
+          },
+          {
+            "id": "cmva6yb6900o3jhywgj2t9v2v",
+            "name": "Crispy Sweet Plantain Chips (Naturally Sweet 200g Bag)",
+            "slug": "crispy-sweet-plantain-chips-200g",
+            "price": "30",
+            "description": "Authentic Crispy Sweet Plantain Chips (Naturally Sweet 200g Bag). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1528825871115-3581a5387919.webp"
+          }
+        ]
+      },
+      {
+        "name": "Botanical Teas",
+        "slug": "botanical-teas",
+        "products": [
+          {
+            "id": "prod-afro-bites-gourmet-treats",
+            "name": "Artisan Hibiscus (Sobolo) Brew Infusion Blend (20 Pouches)",
+            "slug": "artisan-hibiscus-sobolo-brew-tea-pouches",
+            "price": "60",
+            "description": "Authentic Artisan Hibiscus (Sobolo) Brew Infusion Blend (20 Pouches). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1544787219-7f47ccb76575.webp"
+          },
+          {
+            "id": "cmva6ybon00objhyw8fsim7er",
+            "name": "Golden Spiced Ginger & Lemongrass Herbal Tea (150g Tin)",
+            "slug": "golden-spiced-ginger-lemongrass-tea-tin",
+            "price": "55",
+            "description": "Authentic Golden Spiced Ginger & Lemongrass Herbal Tea (150g Tin). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1576092768242-dec231879fc4.webp"
+          },
+          {
+            "id": "cmva6ybxi00ofjhywwm7xbvok",
+            "name": "Cocoa Husk & Peppermint Energizing Tea (20 Pouches)",
+            "slug": "cocoa-husk-peppermint-energizing-tea",
+            "price": "65",
+            "description": "Authentic Cocoa Husk & Peppermint Energizing Tea (20 Pouches). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1594631252845-29fc4cc8cde9.webp"
+          },
+          {
+            "id": "cmva6yc5l00ojjhyw3t70vpfr",
+            "name": "Organic Moringa & Green Tea Metabolism Blend (20 Bags)",
+            "slug": "organic-moringa-green-tea-metabolism",
+            "price": "50",
+            "description": "Authentic Organic Moringa & Green Tea Metabolism Blend (20 Bags). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1571934811356-5cc061b6821f.webp"
+          },
+          {
+            "id": "cmva6ycbf00onjhyw9oueb2yl",
+            "name": "Roasted Cocoa Bean Shell Detox Tea (Loose Leaf 200g)",
+            "slug": "roasted-cocoa-shell-detox-tea-200g",
+            "price": "48",
+            "description": "Authentic Roasted Cocoa Bean Shell Detox Tea (Loose Leaf 200g). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1523906834658-6e24ef2386f9.webp"
+          },
+          {
+            "id": "cmva6ych300orjhyw60htaqv4",
+            "name": "Chamomile & Ghanaian Soursop Calming Night Brew (20 Bags)",
+            "slug": "chamomile-ghanaian-soursop-night-brew",
+            "price": "65",
+            "description": "Authentic Chamomile & Ghanaian Soursop Calming Night Brew (20 Bags). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1563227812-0ea4c22e6cc8.webp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Labadi Surf & Active Co.",
+    "slug": "labadi-surf-active",
+    "categories": [
+      {
+        "name": "Coastal Activewear",
+        "slug": "coastal-activewear",
+        "products": [
+          {
+            "id": "prod-labadi-surf-active-ghana-",
+            "name": "Ghana Black Stars Coastal Athletic Rash Guard (SPF 50+)",
+            "slug": "ghana-black-stars-coastal-athletic-rash-guard",
+            "price": "340",
+            "description": "Authentic Ghana Black Stars Coastal Athletic Rash Guard (SPF 50+). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1518611012118-696072aa579a.webp"
+          },
+          {
+            "id": "cmva6yd2100pgjhyw7veo0mur",
+            "name": "Quick-Dry 4-Way Stretch Board Shorts with Zip Pocket",
+            "slug": "quick-dry-stretch-board-shorts-zip",
+            "price": "260",
+            "description": "Authentic Quick-Dry 4-Way Stretch Board Shorts with Zip Pocket. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1507679799987-c73779587ccf.webp"
+          },
+          {
+            "id": "cmva6yd5c00pqjhywes7s4icb",
+            "name": "Labadi Beach High-Waisted UV Compression Leggings",
+            "slug": "labadi-beach-compression-leggings",
+            "price": "280",
+            "description": "Authentic Labadi Beach High-Waisted UV Compression Leggings. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1506126613408-eca07ce68773.webp"
+          },
+          {
+            "id": "cmva6yd7y00q0jhywz1lmoksg",
+            "name": "Breathable Anti-Chafe Sleeveless Gym Tank Top",
+            "slug": "breathable-anti-chafe-gym-tank-top",
+            "price": "160",
+            "description": "Authentic Breathable Anti-Chafe Sleeveless Gym Tank Top. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1581009146145-b5ef050c2e1e.webp"
+          },
+          {
+            "id": "cmva6ydan00q8jhywgwk176zo",
+            "name": "Waterproof Windbreaker Lightweight Running Jacket",
+            "slug": "waterproof-windbreaker-running-jacket",
+            "price": "380",
+            "description": "Authentic Waterproof Windbreaker Lightweight Running Jacket. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1548883354-7622d03aca27.webp"
+          },
+          {
+            "id": "cmva6ydfx00qgjhywctl1jeij",
+            "name": "Anti-Slip Coastal Water Sports Aqua Shoes",
+            "slug": "anti-slip-coastal-water-sports-aqua-shoes",
+            "price": "220",
+            "description": "Authentic Anti-Slip Coastal Water Sports Aqua Shoes. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1515886657613-9f3515b0c78f.webp"
+          }
+        ]
+      },
+      {
+        "name": "Dry Bags & Storage",
+        "slug": "dry-bags-storage",
+        "products": [
+          {
+            "id": "prod-labadi-surf-active-heavy-",
+            "name": "Heavy-Duty 20L Waterproof Ocean Dry Bag",
+            "slug": "heavy-duty-20l-waterproof-ocean-dry-bag",
+            "price": "190",
+            "description": "Authentic Heavy-Duty 20L Waterproof Ocean Dry Bag. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1553062407-98eeb64c6a62.webp"
+          },
+          {
+            "id": "cmva6ydpc00qyjhyw2fqk1eze",
+            "name": "Ultra-Light 10L Kayak & Beach Dry Sack",
+            "slug": "ultra-light-10l-kayak-beach-dry-sack",
+            "price": "130",
+            "description": "Authentic Ultra-Light 10L Kayak & Beach Dry Sack. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1546938576-6e6a64f317cc.webp"
+          },
+          {
+            "id": "cmva6ydrn00r6jhywsggxmcy3",
+            "name": "35L Waterproof Travel Duffle Backpack with Shoulder Straps",
+            "slug": "35l-waterproof-travel-duffle-backpack",
+            "price": "320",
+            "description": "Authentic 35L Waterproof Travel Duffle Backpack with Shoulder Straps. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1577733966973-d680bffd2e80.webp"
+          },
+          {
+            "id": "cmva6ydte00rajhywvy0yw5mp",
+            "name": "Floating Waterproof Smartphone Pouch with Touch Window",
+            "slug": "floating-waterproof-smartphone-pouch",
+            "price": "65",
+            "description": "Authentic Floating Waterproof Smartphone Pouch with Touch Window. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1622560480605-d83c853bc5c3.webp"
+          },
+          {
+            "id": "cmva6ydw700rgjhywanux932e",
+            "name": "Sandproof Quick-Dry Mesh Beach Duffle Bag",
+            "slug": "sandproof-quick-dry-mesh-beach-bag",
+            "price": "140",
+            "description": "Authentic Sandproof Quick-Dry Mesh Beach Duffle Bag. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1581605405669-fcdf81165afa.webp"
+          },
+          {
+            "id": "cmva6ydyl00rkjhywneeoa698",
+            "name": "Heavy-Duty Wet-Suit & Wetsuit Storage Barrel Bag",
+            "slug": "heavy-duty-wet-suit-storage-barrel-bag",
+            "price": "240",
+            "description": "Authentic Heavy-Duty Wet-Suit & Wetsuit Storage Barrel Bag. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1553062407-98eeb64c6a63.webp"
+          }
+        ]
+      },
+      {
+        "name": "Hydration Bottles",
+        "slug": "hydration-bottles",
+        "products": [
+          {
+            "id": "prod-labadi-surf-active-insula",
+            "name": "Insulated Stainless Steel 1-Litre Thermal Sports Bottle",
+            "slug": "insulated-stainless-steel-1-litre-sports-bottle",
+            "price": "140",
+            "description": "Authentic Insulated Stainless Steel 1-Litre Thermal Sports Bottle. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1602143407151-7111542de6e8.webp"
+          },
+          {
+            "id": "cmva6ye2d00rwjhywrizmzu8y",
+            "name": "750ml Matte Black Ergonomic Cycling Water Bottle",
+            "slug": "750ml-matte-black-cycling-water-bottle",
+            "price": "85",
+            "description": "Authentic 750ml Matte Black Ergonomic Cycling Water Bottle. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1523362628745-0c100150b504.webp"
+          },
+          {
+            "id": "cmva6ye4b00s0jhywd20iptb8",
+            "name": "2-Litre Motivational Time-Marker Fitness Water Jug",
+            "slug": "2-litre-motivational-fitness-water-jug",
+            "price": "160",
+            "description": "Authentic 2-Litre Motivational Time-Marker Fitness Water Jug. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1556881286-fc6915169721.webp"
+          },
+          {
+            "id": "cmva6ye6y00s8jhywed73bwl0",
+            "name": "Collapsible Silicone Trail Running Flask (500ml)",
+            "slug": "collapsible-silicone-trail-running-flask",
+            "price": "75",
+            "description": "Authentic Collapsible Silicone Trail Running Flask (500ml). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1589365278144-c9e705f843ba.webp"
+          },
+          {
+            "id": "cmva6ye9s00scjhywf366i474",
+            "name": "Stainless Steel Thermal Travel Tumbler with Straw (600ml)",
+            "slug": "stainless-steel-thermal-travel-tumbler",
+            "price": "150",
+            "description": "Authentic Stainless Steel Thermal Travel Tumbler with Straw (600ml). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1517256064527-09c73fc73e38.webp"
+          },
+          {
+            "id": "cmva6yeb400skjhywqqvymdts",
+            "name": "Fruit Infuser Sports Gym Water Bottle (800ml)",
+            "slug": "fruit-infuser-sports-gym-water-bottle",
+            "price": "95",
+            "description": "Authentic Fruit Infuser Sports Gym Water Bottle (800ml). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1570535608479-2a994a32c28e.webp"
+          }
+        ]
+      },
+      {
+        "name": "Fitness Accessories",
+        "slug": "fitness-accessories",
+        "products": [
+          {
+            "id": "prod-labadi-surf-active-profes",
+            "name": "Professional Speed Skipping Rope with 360° Ball Bearings",
+            "slug": "professional-speed-skipping-rope-bearings",
+            "price": "85",
+            "description": "Authentic Professional Speed Skipping Rope with 360° Ball Bearings. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1517838277536-f5f99be501cd.webp"
+          },
+          {
+            "id": "cmva6yefa00ssjhyw2mg89imx",
+            "name": "Heavy-Duty Loop Resistance Bands Set (5 Resistance Levels)",
+            "slug": "loop-resistance-bands-set-5-levels",
+            "price": "120",
+            "description": "Authentic Heavy-Duty Loop Resistance Bands Set (5 Resistance Levels). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1598289431512-b97b0917affc.webp"
+          },
+          {
+            "id": "cmva6yei000swjhywszze7a4w",
+            "name": "Extra Thick High-Density Non-Slip Yoga & Pilates Mat (10mm)",
+            "slug": "extra-thick-non-slip-yoga-mat-10mm",
+            "price": "190",
+            "description": "Authentic Extra Thick High-Density Non-Slip Yoga & Pilates Mat (10mm). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1601925260368-ae2f83cf8b7f.webp"
+          },
+          {
+            "id": "cmva6yeka00t4jhywgvbmuj7o",
+            "name": "Adjustable Hand Grip Strengthener (10kg - 60kg)",
+            "slug": "adjustable-hand-grip-strengthener-60kg",
+            "price": "65",
+            "description": "Authentic Adjustable Hand Grip Strengthener (10kg - 60kg). Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1584735935682-2f2b69dff9d2.webp"
+          },
+          {
+            "id": "cmva6yenb00t8jhywifpdki9p",
+            "name": "Deep Tissue High-Density Foam Muscle Recovery Roller",
+            "slug": "deep-tissue-foam-muscle-roller",
+            "price": "140",
+            "description": "Authentic Deep Tissue High-Density Foam Muscle Recovery Roller. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1574680096145-d05b474e2155.webp"
+          },
+          {
+            "id": "cmva6yepx00tcjhywi2tqmq9l",
+            "name": "Sweat-Resistant Running Waist Pack with Headphone Port",
+            "slug": "sweat-resistant-running-waist-pack",
+            "price": "75",
+            "description": "Authentic Sweat-Resistant Running Waist Pack with Headphone Port. Genuine product backed by official Ghanaian warranty and same-day delivery via The Ultimate Virtual Mall.",
+            "imageUrl": "/uploads/prod-uniq-1583454110551-21f2fa2afe61.webp"
+          }
+        ]
+      }
+    ]
+  }
+]
