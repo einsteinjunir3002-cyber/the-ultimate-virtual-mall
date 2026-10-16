@@ -1,10 +1,16 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { AuthProvider } from '@/context/AuthContext';
 import { CartProvider } from '@/context/CartContext';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { CartDrawer } from '@/components/CartDrawer';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
@@ -36,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full antialiased scroll-smooth">
+    <html lang="en" className="h-full antialiased scroll-smooth overflow-x-clip max-w-full">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -45,11 +51,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-full flex flex-col font-['Plus_Jakarta_Sans',sans-serif] bg-slate-50 text-slate-900 selection:bg-indigo-500 selection:text-white">
+      <body className="min-h-full flex flex-col font-['Plus_Jakarta_Sans',sans-serif] bg-slate-50 text-slate-900 selection:bg-indigo-500 selection:text-white w-full max-w-full overflow-x-clip">
         <AuthProvider>
           <CartProvider>
             <Navbar />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1 w-full max-w-full min-w-0 overflow-x-clip">{children}</main>
             <CartDrawer />
             <Footer />
           </CartProvider>

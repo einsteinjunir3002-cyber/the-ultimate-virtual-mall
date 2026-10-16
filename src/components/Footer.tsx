@@ -6,10 +6,10 @@ import { ShoppingBag, ShieldCheck, Truck, CreditCard, HeartHandshake, PhoneCall 
 
 export function Footer() {
   return (
-    <footer className="bg-slate-950 text-slate-400 border-t border-slate-800 text-sm">
+    <footer className="bg-slate-950 text-slate-400 border-t border-slate-800 text-sm w-full overflow-hidden">
       {/* Value Proposition Strip */}
       <div className="border-b border-slate-800/80 bg-slate-900/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="flex items-center gap-3.5">
               <div className="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center shrink-0">
@@ -55,7 +55,7 @@ export function Footer() {
       </div>
 
       {/* Main Footer Links */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">

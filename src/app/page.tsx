@@ -76,13 +76,13 @@ export default async function HomePage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50">
+    <div className="min-h-screen flex flex-col bg-slate-50 w-full max-w-full overflow-x-clip">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-slate-950 text-white py-16 sm:py-24 border-b border-slate-800">
+      <section className="relative overflow-hidden bg-slate-950 text-white py-12 sm:py-24 border-b border-slate-800 w-full">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/40 via-slate-950 to-slate-950 pointer-events-none" />
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-950/80 border border-indigo-700/50 text-indigo-300 text-xs font-bold mb-6 backdrop-blur-md">
               <Sparkles className="w-4 h-4 text-amber-400" />
@@ -124,7 +124,7 @@ export default async function HomePage() {
       </section>
 
       {/* Categories Horizontal Carousel */}
-      <section className="border-b border-slate-200/80 bg-white py-4 sm:py-6">
+      <section className="border-b border-slate-200/80 bg-white py-4 sm:py-6 w-full overflow-hidden">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-3 sm:mb-4">
             <h2 className="text-xs font-extrabold uppercase tracking-widest text-slate-500">
@@ -232,7 +232,7 @@ export default async function HomePage() {
       </section>
 
       {/* Become a Merchant Spotlight Banner */}
-      <section className="bg-slate-900 text-white py-12 sm:py-16 border-t border-slate-800">
+      <section className="bg-slate-900 text-white py-12 sm:py-16 border-t border-slate-800 w-full overflow-hidden">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="rounded-2xl sm:rounded-3xl bg-gradient-to-tr from-slate-900 via-indigo-950 to-slate-900 border border-indigo-500/30 p-5 sm:p-12 relative overflow-hidden shadow-2xl">
             <div className="max-w-2xl">

@@ -36,25 +36,29 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full glass-nav">
+    <header className="sticky top-0 z-40 w-full glass-nav max-w-full overflow-hidden">
       {/* Top Banner Notice */}
-      <div className="bg-slate-900 text-slate-300 text-xs py-1.5 px-4 text-center font-medium flex items-center justify-center gap-2">
-        <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span>Ghana’s Premier Digital Shopping Destination • Seamless Mobile Money & Card Payments via Paystack</span>
+      <div className="w-full bg-slate-900 text-slate-300 text-[11px] sm:text-xs py-1.5 px-3 sm:px-4 text-center font-medium overflow-hidden">
+        <div className="max-w-7xl mx-auto flex items-center justify-center gap-1.5 sm:gap-2 leading-tight">
+          <span className="inline-block w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+          <span className="truncate sm:whitespace-normal">
+            Ghana’s Premier Digital Shopping Destination • Seamless Mobile Money & Card Payments via Paystack
+          </span>
+        </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 gap-4">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-20 gap-2 sm:gap-4">
           {/* Mall Brand Logo */}
-          <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
-              <ShoppingBag className="w-6 h-6" />
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0 min-w-0">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform shrink-0">
+              <ShoppingBag className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 leading-tight">
+            <div className="flex flex-col min-w-0">
+              <span className="font-extrabold text-base sm:text-xl tracking-tight text-slate-900 leading-tight truncate">
                 The Ultimate <span className="text-indigo-600">Mall</span>
               </span>
-              <span className="text-[10px] uppercase font-bold tracking-widest text-slate-500">
+              <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-slate-500 hidden xs:block truncate">
                 Virtual Multi-Vendor Hub
               </span>
             </div>
@@ -201,10 +205,10 @@ export function Navbar() {
                   )}
                 </div>
               ) : (
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5 sm:gap-2">
                   <Link
                     href="/auth/login"
-                    className="px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition"
+                    className="hidden sm:inline-flex px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition"
                   >
                     Sign In
                   </Link>
@@ -221,7 +225,7 @@ export function Navbar() {
             {/* Mobile menu trigger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl text-slate-600 hover:bg-slate-100 transition"
+              className="lg:hidden p-1.5 sm:p-2 rounded-xl text-slate-600 hover:bg-slate-100 transition shrink-0"
               aria-label="Toggle Navigation"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
