@@ -1,0 +1,338 @@
+[
+  {
+    "id": "cmva70mt001fmjhywedpfegb2",
+    "name": "85% Extra Dark Ghanaian Cocoa Artisan Bar (100g)",
+    "slug": "85-extra-dark-ghanaian-cocoa-bar",
+    "category": "Single-Origin Chocolates",
+    "categorySlug": "single-origin-chocolates",
+    "images": [
+      {
+        "id": "cmvbgyg230001jhkss568f759",
+        "url": "/uploads/prod-dark-cocoa-artisan-bar.webp",
+        "altText": "85% Extra Dark Ghanaian Cocoa Artisan Bar (100g)"
+      }
+    ]
+  },
+  {
+    "id": "prod-afro-bites-gourmet-treats",
+    "name": "Artisan Hibiscus (Sobolo) Brew Infusion Blend (20 Pouches)",
+    "slug": "artisan-hibiscus-sobolo-brew-tea-pouches",
+    "category": "Botanical Teas",
+    "categorySlug": "botanical-teas",
+    "images": [
+      {
+        "id": "cmvbgygm30003jhksq8uimi5l",
+        "url": "/uploads/prod-sobolo-hibiscus-brew.webp",
+        "altText": "Artisan Hibiscus (Sobolo) Brew Infusion Blend (20 Pouches)"
+      }
+    ]
+  },
+  {
+    "id": "cmva70o4n01fyjhywtieiv02x",
+    "name": "Bourbon Vanilla White Chocolate with Passionfruit Swirl",
+    "slug": "bourbon-vanilla-white-chocolate-passionfruit",
+    "category": "Single-Origin Chocolates",
+    "categorySlug": "single-origin-chocolates",
+    "images": [
+      {
+        "id": "cmvbgygv50005jhkszfh31kl9",
+        "url": "/uploads/prod-white-chocolate-passionfruit.webp",
+        "altText": "Bourbon Vanilla White Chocolate with Passionfruit Swirl"
+      }
+    ]
+  },
+  {
+    "id": "cmva70xcc01i6jhyw0g59rnpq",
+    "name": "Chamomile & Ghanaian Soursop Calming Night Brew (20 Bags)",
+    "slug": "chamomile-ghanaian-soursop-night-brew",
+    "category": "Botanical Teas",
+    "categorySlug": "botanical-teas",
+    "images": [
+      {
+        "id": "cmvbgyh550007jhksk1m6zrre",
+        "url": "/uploads/prod-chamomile-soursop-brew.webp",
+        "altText": "Chamomile & Ghanaian Soursop Calming Night Brew (20 Bags)"
+      }
+    ]
+  },
+  {
+    "id": "cmva70spx01h2jhyw53fuiehs",
+    "name": "Chewy Sweet Sun-Dried Pineapple Ring Slices (200g Pack)",
+    "slug": "chewy-sweet-sun-dried-pineapple-rings",
+    "category": "Dried Fruits",
+    "categorySlug": "dried-fruits",
+    "images": [
+      {
+        "id": "cmvbgyhes0009jhksdbywr3d5",
+        "url": "/uploads/prod-sundried-pineapple-rings.webp",
+        "altText": "Chewy Sweet Sun-Dried Pineapple Ring Slices (200g Pack)"
+      }
+    ]
+  },
+  {
+    "id": "cmva70vx201hujhywc4y4t0gu",
+    "name": "Cocoa Husk & Peppermint Energizing Tea (20 Pouches)",
+    "slug": "cocoa-husk-peppermint-energizing-tea",
+    "category": "Botanical Teas",
+    "categorySlug": "botanical-teas",
+    "images": [
+      {
+        "id": "cmvbgyhpm000bjhkskor37qvo",
+        "url": "/uploads/prod-uniq-1594631252845-29fc4cc8cde9.webp",
+        "altText": "Cocoa Husk & Peppermint Energizing Tea (20 Pouches)"
+      }
+    ]
+  },
+  {
+    "id": "cmva70ook01g2jhywwklf6vb9",
+    "name": "Roasted Cocoa Nibs Dark Chocolate Praline Truffles (Box of 8)",
+    "slug": "cocoa-nibs-dark-chocolate-praline-truffles",
+    "category": "Single-Origin Chocolates",
+    "categorySlug": "single-origin-chocolates",
+    "images": [
+      {
+        "id": "cmvbgyi1i000djhksb4623600",
+        "url": "/uploads/prod-dark-chocolate-truffles-box8.webp",
+        "altText": "Roasted Cocoa Nibs Dark Chocolate Praline Truffles (Box of 8)"
+      }
+    ]
+  },
+  {
+    "id": "cmva70ukk01hijhywreqb2ffw",
+    "name": "Crispy Sweet Plantain Chips (Naturally Sweet 200g Bag)",
+    "slug": "crispy-sweet-plantain-chips-200g",
+    "category": "Dried Fruits",
+    "categorySlug": "dried-fruits",
+    "images": [
+      {
+        "id": "cmvbgyifh000fjhkscczzgo1c",
+        "url": "/uploads/prod-crispy-plantain-chips.webp",
+        "altText": "Crispy Sweet Plantain Chips (Naturally Sweet 200g Bag)"
+      }
+    ]
+  },
+  {
+    "id": "cmva70rux01gujhywfbzlpano",
+    "name": "Dark Chocolate-Dipped Roasted Cashew Pralines (200g Box)",
+    "slug": "dark-chocolate-dipped-roasted-cashews",
+    "category": "Savannah Cashews",
+    "categorySlug": "savannah-cashews",
+    "images": [
+      {
+        "id": "cmvbgyiq3000hjhkszu0iwz7c",
+        "url": "/uploads/prod-dark-chocolate-dipped-cashews.webp",
+        "altText": "Dark Chocolate-Dipped Roasted Cashew Pralines (200g Box)"
+      }
+    ]
+  },
+  {
+    "id": "cmva70vhl01hqjhywk5f4mbhl",
+    "name": "Golden Spiced Ginger & Lemongrass Herbal Tea (150g Tin)",
+    "slug": "golden-spiced-ginger-lemongrass-tea-tin",
+    "category": "Botanical Teas",
+    "categorySlug": "botanical-teas",
+    "images": [
+      {
+        "id": "cmvbgyj1h000jjhksnky4fp0h",
+        "url": "/uploads/prod-ginger-lemongrass-tin.webp",
+        "altText": "Golden Spiced Ginger & Lemongrass Herbal Tea (150g Tin)"
+      }
+    ]
+  },
+  {
+    "id": "cmva70qgw01gijhywygdkuyqo",
+    "name": "Hot Chili & African Cayenne Roasted Cashews (250g Pouch)",
+    "slug": "hot-chili-cayenne-roasted-cashews-pouch",
+    "category": "Savannah Cashews",
+    "categorySlug": "savannah-cashews",
+    "images": [
+      {
+        "id": "cmvbgyjbb000ljhks94vd0m3i",
+        "url": "/uploads/prod-hot-chili-cayenne-cashews.webp",
+        "altText": "Hot Chili & African Cayenne Roasted Cashews (250g Pouch)"
+      }
+    ]
+  },
+  {
+    "id": "cmva70n8d01fqjhywg6dc8xro",
+    "name": "Milk Chocolate with Toasted Coconut & Sea Salt Nibs (100g)",
+    "slug": "milk-chocolate-toasted-coconut-sea-salt",
+    "category": "Single-Origin Chocolates",
+    "categorySlug": "single-origin-chocolates",
+    "images": [
+      {
+        "id": "cmvbgyjnq000njhks53arog1z",
+        "url": "/uploads/prod-milk-chocolate-coconut-seasalt.webp",
+        "altText": "Milk Chocolate with Toasted Coconut & Sea Salt Nibs (100g)"
+      }
+    ]
+  },
+  {
+    "id": "cmva70t5501h6jhyw2wudw0lw",
+    "name": "Natural Sun-Dried Papaya Chunks with Lime (200g Pack)",
+    "slug": "natural-sun-dried-papaya-chunks-lime",
+    "category": "Dried Fruits",
+    "categorySlug": "dried-fruits",
+    "images": [
+      {
+        "id": "cmvbgyk0l000pjhksg7yhybkt",
+        "url": "/uploads/prod-sundried-papaya-chunks.webp",
+        "altText": "Natural Sun-Dried Papaya Chunks with Lime (200g Pack)"
+      }
+    ]
+  },
+  {
+    "id": "cmva70wco01hyjhywmhs45spp",
+    "name": "Organic Moringa & Green Tea Metabolism Blend (20 Bags)",
+    "slug": "organic-moringa-green-tea-metabolism",
+    "category": "Botanical Teas",
+    "categorySlug": "botanical-teas",
+    "images": [
+      {
+        "id": "cmvbgykcc000rjhkspasxxadf",
+        "url": "/uploads/prod-uniq-1571934811356-5cc061b6821f.webp",
+        "altText": "Organic Moringa & Green Tea Metabolism Blend (20 Bags)"
+      }
+    ]
+  },
+  {
+    "id": "cmva70rf201gqjhywqh55ato6",
+    "name": "Raw Organic Whole Cashew Kernels for Baking (500g Bag)",
+    "slug": "raw-organic-whole-cashew-kernels-500g",
+    "category": "Savannah Cashews",
+    "categorySlug": "savannah-cashews",
+    "images": [
+      {
+        "id": "cmvbgykp3000tjhkstghw0o51",
+        "url": "/uploads/prod-raw-organic-whole-cashews.webp",
+        "altText": "Raw Organic Whole Cashew Kernels for Baking (500g Bag)"
+      }
+    ]
+  },
+  {
+    "id": "cmva70wvv01i2jhywl2w8fkf9",
+    "name": "Roasted Cocoa Bean Shell Detox Tea (Loose Leaf 200g)",
+    "slug": "roasted-cocoa-shell-detox-tea-200g",
+    "category": "Botanical Teas",
+    "categorySlug": "botanical-teas",
+    "images": [
+      {
+        "id": "cmvbgyl3n000vjhksm85lfov0",
+        "url": "/uploads/prod-roasted-cocoa-shell-tea.webp",
+        "altText": "Roasted Cocoa Bean Shell Detox Tea (Loose Leaf 200g)"
+      }
+    ]
+  },
+  {
+    "id": "cmva3uazx00agjhicphqjm3tc",
+    "name": "Savannah Honey-Glazed Roasted Cashews (300g Tin)",
+    "slug": "savannah-honey-glazed-roasted-cashews-tin",
+    "category": "Savannah Cashews",
+    "categorySlug": "savannah-cashews",
+    "images": [
+      {
+        "id": "cmvbgylju000xjhks3kmk4ppk",
+        "url": "/uploads/prod-honey-roasted-cashews.webp",
+        "altText": "Savannah Honey-Glazed Roasted Cashews (300g Tin)"
+      }
+    ]
+  },
+  {
+    "id": "cmva3ua8y00acjhicojv4s67v",
+    "name": "Single-Origin 72% Dark Cocoa Chocolate Bar Gift Box (4 x 80g)",
+    "slug": "single-origin-72-dark-cocoa-chocolate-gift-box",
+    "category": "Single-Origin Chocolates",
+    "categorySlug": "single-origin-chocolates",
+    "images": [
+      {
+        "id": "cmvbgylwa000zjhksawofwybc",
+        "url": "/uploads/prod-dark-cocoa-gift-box-4bars.webp",
+        "altText": "Single-Origin 72% Dark Cocoa Chocolate Bar Gift Box (4 x 80g)"
+      }
+    ]
+  },
+  {
+    "id": "cmva70px101gejhywpg3guf94",
+    "name": "Slow-Roasted Sea Salt Whole Cashews (300g Tin)",
+    "slug": "slow-roasted-sea-salt-whole-cashews-tin",
+    "category": "Savannah Cashews",
+    "categorySlug": "savannah-cashews",
+    "images": [
+      {
+        "id": "cmvbgymf10011jhksz22ol508",
+        "url": "/uploads/prod-slow-roasted-seasalt-cashews.webp",
+        "altText": "Slow-Roasted Sea Salt Whole Cashews (300g Tin)"
+      }
+    ]
+  },
+  {
+    "id": "cmva70qxf01gmjhyw6hpwzxr8",
+    "name": "Smoked Paprika & Garlic Savory Cashew Crunch (250g)",
+    "slug": "smoked-paprika-garlic-savory-cashew-crunch",
+    "category": "Savannah Cashews",
+    "categorySlug": "savannah-cashews",
+    "images": [
+      {
+        "id": "cmvbgymst0013jhkstdpcqrx5",
+        "url": "/uploads/prod-smoked-paprika-garlic-cashews.webp",
+        "altText": "Smoked Paprika & Garlic Savory Cashew Crunch (250g)"
+      }
+    ]
+  },
+  {
+    "id": "cmva70not01fujhywfoyk49hd",
+    "name": "Spiced Chili & Hot Ginger Dark Chocolate Bar (100g)",
+    "slug": "spiced-chili-hot-ginger-dark-chocolate",
+    "category": "Single-Origin Chocolates",
+    "categorySlug": "single-origin-chocolates",
+    "images": [
+      {
+        "id": "cmvbgyn690015jhksgdi3pgeb",
+        "url": "/uploads/prod-chili-ginger-dark-chocolate.webp",
+        "altText": "Spiced Chili & Hot Ginger Dark Chocolate Bar (100g)"
+      }
+    ]
+  },
+  {
+    "id": "cmva3ucdp00aojhic5c20lxjf",
+    "name": "Sun-Dried Organic Volta Mango Strips (200g Pack)",
+    "slug": "sun-dried-organic-volta-mango-strips",
+    "category": "Dried Fruits",
+    "categorySlug": "dried-fruits",
+    "images": [
+      {
+        "id": "cmvbgyni70017jhkshgch04rf",
+        "url": "/uploads/prod-sundried-volta-mango-strips.webp",
+        "altText": "Sun-Dried Organic Volta Mango Strips (200g Pack)"
+      }
+    ]
+  },
+  {
+    "id": "cmva70tob01hajhywq84dnggw",
+    "name": "Toasted Coconut Smiles Chips with Sea Salt (150g Pouch)",
+    "slug": "toasted-coconut-smiles-chips-sea-salt",
+    "category": "Dried Fruits",
+    "categorySlug": "dried-fruits",
+    "images": [
+      {
+        "id": "cmvbgynxd0019jhks8b4arle7",
+        "url": "/uploads/prod-toasted-coconut-chips.webp",
+        "altText": "Toasted Coconut Smiles Chips with Sea Salt (150g Pouch)"
+      }
+    ]
+  },
+  {
+    "id": "cmva70u3w01hejhywb8vzb085",
+    "name": "Tropical Harvest Trail Mix (Mango, Cashew & Pineapple 250g)",
+    "slug": "tropical-harvest-trail-mix-250g",
+    "category": "Dried Fruits",
+    "categorySlug": "dried-fruits",
+    "images": [
+      {
+        "id": "cmvbgyocy001bjhksb3mck4pi",
+        "url": "/uploads/prod-tropical-harvest-trail-mix.webp",
+        "altText": "Tropical Harvest Trail Mix (Mango, Cashew & Pineapple 250g)"
+      }
+    ]
+  }
+]
